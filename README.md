@@ -1,2 +1,2 @@
 # RA22
-Rechnerarchitektur Algorithmus
+Rechnerarchitektur RLE - Algorithmus
