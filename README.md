@@ -1,2 +1,3 @@
 # RA22
-Rechnerarchitektur RLE - Algorithmus
+## Rechnerarchitektur RLE - Algorithmus
+### Setup in GitHub
