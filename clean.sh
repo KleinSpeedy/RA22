@@ -1,2 +1,3 @@
 rm -rf build
-rm -rf obj
+rm -rf obj_g
+rm -rf obj_O2

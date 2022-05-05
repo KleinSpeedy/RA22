@@ -18,5 +18,7 @@ add_executable(rle_arr main.c rle_arr.c)
 #fuer ENABLE_LOCAL_MAIN gedacht:
 #target_compile_options(rle_arr PRIVATE -Wall -O2)
 
-add_library(test_rle_arr OBJECT rle_arr.c)
-target_compile_options(test_rle_arr PRIVATE -Wall -O2 -save-temps)
+add_library(rle_arr_O2 OBJECT rle_arr.c)
+target_compile_options(rle_arr_O2 PRIVATE -Wall -O2 -save-temps)
+add_library(rle_arr_g OBJECT rle_arr.c)
+target_compile_options(rle_arr_g PRIVATE -Wall -O2 -g -save-temps)
