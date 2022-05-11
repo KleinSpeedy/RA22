@@ -13,3 +13,8 @@ cp ./build/CMakeFiles/rle_arr_g.dir/*.c.o ./obj/obj_g
 
 #cp ./build/*.s ./obj
 #cp ./build/*.i ./obj
+
+objdump -d --source ./obj/obj_O1/rle_arr.c.o > ./obj/obj_O1/rle_O1.c.asm_c
+objdump -d --source ./obj/obj_O2/rle_arr.c.o > ./obj/obj_O2/rle_O2.c.asm_c
+objdump -d --source ./obj/obj_O3/rle_arr.c.o > ./obj/obj_O3/rle_O3.c.asm_c
+objdump -d --source ./obj/obj_g/rle_arr.c.o > ./obj/obj_g/rle_g.c.asm_c
