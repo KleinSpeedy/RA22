@@ -1,15 +1,22 @@
 cmake -B build -S .
 cmake --build build
 mkdir -p obj
+mkdir -p exe
 mkdir -p obj/obj_O1
 mkdir -p obj/obj_O2
 mkdir -p obj/obj_O3
 mkdir -p obj/obj_g
 
-cp ./build/CMakeFiles/rle_arr_O1.dir/*.c.o ./obj/obj_O1
-cp ./build/CMakeFiles/rle_arr_O2.dir/*.c.o ./obj/obj_O2
-cp ./build/CMakeFiles/rle_arr_O3.dir/*.c.o ./obj/obj_O3
-cp ./build/CMakeFiles/rle_arr_g.dir/*.c.o ./obj/obj_g
+cp ./build/rle_arr ./exe
+cp ./build/rle_arr_O1 ./exe
+cp ./build/rle_arr_O2 ./exe
+cp ./build/rle_arr_O3 ./exe
+cp ./build/rle_arr_g ./exe
+
+cp ./build/CMakeFiles/rle_arr_O1.dir/rle*.c.o ./obj/obj_O1
+cp ./build/CMakeFiles/rle_arr_O2.dir/rle*.c.o ./obj/obj_O2
+cp ./build/CMakeFiles/rle_arr_O3.dir/rle*.c.o ./obj/obj_O3
+cp ./build/CMakeFiles/rle_arr_g.dir/rle*.c.o ./obj/obj_g
 
 #cp ./build/*.s ./obj
 #cp ./build/*.i ./obj
