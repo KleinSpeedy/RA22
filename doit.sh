@@ -8,10 +8,7 @@ mkdir -p obj/obj_O3
 mkdir -p obj/obj_g
 
 cp ./build/rle_arr ./exe
-cp ./build/rle_arr_O1 ./exe
-cp ./build/rle_arr_O2 ./exe
-cp ./build/rle_arr_O3 ./exe
-cp ./build/rle_arr_g ./exe
+cp ./build/rle_arr_c ./exe
 
 cp ./build/CMakeFiles/rle_arr_O1.dir/rle*.c.o ./obj/obj_O1
 cp ./build/CMakeFiles/rle_arr_O2.dir/rle*.c.o ./obj/obj_O2

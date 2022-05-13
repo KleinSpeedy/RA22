@@ -16,20 +16,14 @@ set(CMAKE_C_COMPILER gcc)
 add_executable(rle_arr main.c rle_arr.c)
 target_compile_options(rle_arr PRIVATE -Wall -save-temps)
 
-add_executable(rle_arr_O1 main.c rle_arr.c)
+add_executable(rle_arr_c rle_arr.c)
+target_compile_options(rle_arr_c PRIVATE -Wall -D ENABLE_LOCAL_MAIN)
+
+add_library(rle_arr_O1 OBJECT rle_arr.c)
 target_compile_options(rle_arr_O1 PRIVATE -Wall -O1 -save-temps)
-
-add_executable(rle_arr_O2 main.c rle_arr.c)
+add_library(rle_arr_O2 OBJECT rle_arr.c)
 target_compile_options(rle_arr_O2 PRIVATE -Wall -O2 -save-temps)
-
-add_executable(rle_arr_O3 main.c rle_arr.c)
+add_library(rle_arr_O3 OBJECT rle_arr.c)
 target_compile_options(rle_arr_O3 PRIVATE -Wall -O3 -save-temps)
-
-add_executable(rle_arr_g main.c rle_arr.c)
-target_compile_options(rle_arr_g PRIVATE -Wall -O2 -g -save-temps)
-
-#fuer ENABLE_LOCAL_MAIN gedacht:
-#target_compile_options(rle_arr PRIVATE -Wall -O2)
-
-#add_library(rle_arr_O1 OBJECT rle_arr.c)
-#target_compile_options(rle_arr_O1 PRIVATE -Wall -O1 -save-temps)
+add_library(rle_arr_g OBJECT rle_arr.c)
+target_compile_options(rle_arr_g PRIVATE -Wall -g -O1 -save-temps)
