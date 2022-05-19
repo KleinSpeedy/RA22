@@ -16,19 +16,18 @@ int strlength(const char *str)
 
 void rle_array(const char* str)
 {
-    //printf("%s \n",str);
     for (int i = 0; str[i] != '\0'; i++) {
 
         char cur_pair[2];
         int count = 1;
-        
+
         cur_pair[1] = str[i];
         while (str[i + 1] != '\0' && str[i] == str[i + 1]) {
             count++;
             i++;
         }
         cur_pair[0] = '0' + count;
-        
+
         printf("%c%c",cur_pair[0],cur_pair[1]);
         //printf("%d%c",count,str[i]);
     }
@@ -51,7 +50,7 @@ const char* test_daten[] = {
 
 int main() 
 {
-    for (int i = 0; i < 1; i++)
+    for (int i = 0; i < 4; i++)
         rle_array(test_daten[i]);
 
     return 0;
