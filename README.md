@@ -1,14 +1,24 @@
 # RA22
 ## Rechnerarchitektur RLE - Algorithmus
+___
 ### Skripte
-**doit.sh**  
+___
+```
+./doit.sh
+```   
 Erstellt das Projekt.  
-Objektdateien werden in ./obj und jeweilige Unterordner verschoben. Executables werden in ./exe verschoben.
+Objektdateien werden in /obj und jeweilige Unterordner verschoben. Executables werden in /exe verschoben.
+___ 
 
-**clean.sh**  
+```
+./clean.sh
+```
 Loescht alle Ordner.
+___
 
-**counter.sh** -1-  
+
+```
+./clean.sh ./build/rle.*
+```
 Liest alle Assembler Befehle aus einer *.s Datei (Parameter -1-) und speichert sie in instructionsCounter.csv .
-
--Setup in GitHub-
+___
