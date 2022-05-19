@@ -1,3 +1,3 @@
 #include <stdio.h>
 
-void rle_array(const char * str);
+char* rle_array(char * str);
