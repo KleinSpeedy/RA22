@@ -1,20 +1,5 @@
 #include "rle_arr.h"
 
-int strlength(char *str)
-{
-    int length = 0;
-    for (int i = 0; str[i] != '\0'; i++)
-    {
-        length++;
-    }
-
-    if (length > 1)
-        return length;
-    else
-        return 0;
-}
-
-// char str[] can be char *str too!
 char *rle_array(char str[])
 {
     char *p_str = str;
