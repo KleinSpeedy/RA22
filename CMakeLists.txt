@@ -18,6 +18,8 @@ target_compile_options(rle_arr PRIVATE -Wall -save-temps)
 
 add_executable(rle_arr_c rle_arr.c)
 target_compile_options(rle_arr_c PRIVATE -Wall -D ENABLE_LOCAL_MAIN)
+add_executable(rle_v2 rle_v2.c)
+target_compile_options(rle_v2 PRIVATE -Wall -D ENABLE_LOCAL_MAIN -save-temps)
 
 add_library(rle_arr_O1 OBJECT rle_arr.c)
 target_compile_options(rle_arr_O1 PRIVATE -Wall -O1 -save-temps)
