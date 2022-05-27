@@ -18,7 +18,7 @@ ___
 
 
 ```
-./clean.sh ./build/rle.*
+./counter.sh ./build/rle.*
 ```
 Liest alle Assembler Befehle aus einer *.s Datei (Parameter -1-) und speichert sie in instructionsCounter.csv .
 ___
