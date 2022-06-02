@@ -31,10 +31,10 @@ cp ./build/CMakeFiles/rle_exe_O2.dir/rle*.c.o ./obj/obj_O2
 cp ./build/CMakeFiles/rle_exe_O3.dir/rle*.c.o ./obj/obj_O3
 cp ./build/CMakeFiles/rle_exe_g.dir/rle*.c.o ./obj/obj_g
 
-cp ./build/CMakeFiles/rle_v2_O1.dir/rle*.c.o ./obj/obj_O1
-cp ./build/CMakeFiles/rle_v2_O2.dir/rle*.c.o ./obj/obj_O2
-cp ./build/CMakeFiles/rle_v2_O3.dir/rle*.c.o ./obj/obj_O3
-cp ./build/CMakeFiles/rle_v2_g.dir/rle*.c.o ./obj/obj_g
+cp ./build/CMakeFiles/rle_objv2_O1.dir/rle*.c.o ./obj/obj_O1
+cp ./build/CMakeFiles/rle_objv2_O2.dir/rle*.c.o ./obj/obj_O2
+cp ./build/CMakeFiles/rle_objv2_O3.dir/rle*.c.o ./obj/obj_O3
+cp ./build/CMakeFiles/rle_objv2_g.dir/rle*.c.o ./obj/obj_g
 
 #Copy for add_library
 #cp ./build/CMakeFiles/rle_obj_O1.dir/rle*.c.o ./obj/obj_O1
