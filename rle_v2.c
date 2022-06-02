@@ -23,7 +23,7 @@ char *rle_v2(char str[])
 }
 
 #ifdef ENABLE_LOCAL_MAIN
-#include "rle_arr.h"
+#include "rle_v2.h"
 
 //1 char[] with 960009 chars
 // random string with 120k chars * 8
@@ -31,7 +31,7 @@ char test1[] = "0110001101100011011001110111010001100001011000110110001101100011
 
 int main()
 {
-    char* compressed = rle_array(test1);
+    char* compressed = rle_v2(test1);
     printf("%s\n",compressed);
 /*     compressed = rle_array(test2);
     printf("%s\n",compressed);
