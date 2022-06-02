@@ -7,12 +7,6 @@ char test1[] = "0110001101100011011001110111010001100001011000110110001101100011
 int main()
 {
     char* compressed = rle_array(test1);
-    printf("%s\n",compressed);
-/*     compressed = rle_array(test2);
-    printf("%s\n",compressed);
-    compressed = rle_array(test3);
-    printf("%s\n",compressed);
-    compressed = rle_array(test4);
-    printf("%s\n",compressed); */
+    //printf("%s\n",compressed);
     return 0;
 }
