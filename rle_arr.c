@@ -26,7 +26,8 @@ char *rle_array(char str[])
             pos++;
         }
     }
-
+    
+    printf("new size: %d\n",pos);
     p_str[pos] = '\0';
 
     return p_str;

@@ -16,7 +16,8 @@ char *rle_v2(char str[])
         p_str[pos] = '0' + count;
         pos++;
     }
-
+    
+    printf("new size: %d\n",pos);
     p_str[pos] = '\0';
 
     return p_str;
