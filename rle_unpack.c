@@ -23,7 +23,8 @@ char* rle_unpack(char* str)
     }
     first = str[comp_size];
     
-    do 
+     
+    while (size > 0)
     {
         comp_size--;
         count = str[comp_size];
@@ -35,7 +36,6 @@ char* rle_unpack(char* str)
         if (first == '1') first = '0';
         else first = '1';
     }
-    while (size > 0);
 
     return str;
 }
