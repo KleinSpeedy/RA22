@@ -23,11 +23,11 @@ target_compile_options(rle_exe PRIVATE -Wall -save-temps)
 
 #optimized exe for version 1
 add_executable(rle_exe_O1 main.c rle_arr.c rle_unpack.c)
-target_compile_options(rle_exe_O1 PRIVATE -Wall -O1)
+target_compile_options(rle_exe_O1 PRIVATE -Wall -O1 -save-temps)
 add_executable(rle_exe_O2 main.c rle_arr.c rle_unpack.c)
-target_compile_options(rle_exe_O2 PRIVATE -Wall -O2)
+target_compile_options(rle_exe_O2 PRIVATE -Wall -O2 -save-temps)
 add_executable(rle_exe_O3 main.c rle_arr.c rle_unpack.c)
-target_compile_options(rle_exe_O3 PRIVATE -Wall -O3)
+target_compile_options(rle_exe_O3 PRIVATE -Wall -O3 -save-temps)
 add_executable(rle_exe_g main.c rle_arr.c rle_unpack.c)
 target_compile_options(rle_exe_g PRIVATE -Wall -g)
 

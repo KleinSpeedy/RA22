@@ -40,3 +40,9 @@ objdump -d --source ./obj/obj_O1/rle_unpack.c.o > ./obj/obj_O1/rle_unpack_O1.c.a
 objdump -d --source ./obj/obj_O2/rle_unpack.c.o > ./obj/obj_O2/rle_unpack_O2.c.asm_c
 objdump -d --source ./obj/obj_O3/rle_unpack.c.o > ./obj/obj_O3/rle_unpack_O3.c.asm_c
 objdump -d --source ./obj/obj_g/rle_unpack.c.o > ./obj/obj_g/rle_unpack_g.c.asm_c
+
+mkdir inCount
+./counter.sh ./build/CMakeFiles/rle_exe.dir/rle_arr.c.s ./inCount/rle_default.csv
+./counter.sh ./build/CMakeFiles/rle_exe_O1.dir/rle_arr.c.s ./inCount/rle_O1.csv
+./counter.sh ./build/CMakeFiles/rle_exe_O2.dir/rle_arr.c.s ./inCount/rle_O2.csv
+./counter.sh ./build/CMakeFiles/rle_exe_O3.dir/rle_arr.c.s ./inCount/rle_O3.csv
