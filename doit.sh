@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cmake -B build -S .
 cmake --build build
 mkdir -p obj
@@ -46,3 +48,38 @@ mkdir inCount
 ./counter.sh ./build/CMakeFiles/rle_exe_O1.dir/rle_arr.c.s ./inCount/rle_O1.csv
 ./counter.sh ./build/CMakeFiles/rle_exe_O2.dir/rle_arr.c.s ./inCount/rle_O2.csv
 ./counter.sh ./build/CMakeFiles/rle_exe_O3.dir/rle_arr.c.s ./inCount/rle_O3.csv
+
+if [ $1 = pi ]
+then
+    echo "Raspberry Pi"
+    perf stat -o ./perf/pi/rle_pi.md -r 50 ./exe/rle_exe
+    perf stat -o ./perf/pi/rle_O1_pi.md -r 50 ./exe/exe_O1/rle_exe_O1
+    perf stat -o ./perf/pi/rle_O_pi.md -r 50 ./exe/exe_O2/rle_exe_O2
+    perf stat -o ./perf/pi/rle_O3_pi.md -r 50 ./exe/exe_O3/rle_exe_O3
+
+elif [ $1 = ryzen ]
+then
+    echo "Ryzen"
+    perf stat -o ./perf/ryzen/rle_rz.md -r 50 ./exe/rle_exe
+    perf stat -o ./perf/ryzen/rle_O1_rz.md -r 50 ./exe/exe_O1/rle_exe_O1
+    perf stat -o ./perf/ryzen/rle_O2_rz.md -r 50 ./exe/exe_O2/rle_exe_O2
+    perf stat -o ./perf/ryzen/rle_O3_rz.md -r 50 ./exe/exe_O3/rle_exe_O3
+
+elif [ $1 = athlon ]
+then
+    echo "Athlon"
+    perf stat -o ./perf/athlon/rle_ath.md -r 50 ./exe/rle_exe
+    perf stat -o ./perf/athlon/rle_O1_ath.md -r 50 ./exe/exe_O1/rle_exe_O1
+    perf stat -o ./perf/athlon/rle_O2_ath.md -r 50 ./exe/exe_O2/rle_exe_O2
+    perf stat -o ./perf/athlon/rle_O3_ath.md -r 50 ./exe/exe_O3/rle_exe_O3
+
+elif [ $1 = opteron ]
+then
+    echo "Opteron"
+    perf stat -o ./perf/opteron/rle_opt.md -r 50 ./exe/rle_exe
+    perf stat -o ./perf/opteron/rle_O1_opt.md -r 50 ./exe/exe_O1/rle_exe_O1
+    perf stat -o ./perf/opteron/rle_O2_opt.md -r 50 ./exe/exe_O2/rle_exe_O2
+    perf stat -o ./perf/opteron/rle_O3_opt.md -r 50 ./exe/exe_O3/rle_exe_O3
+
+fi
+
