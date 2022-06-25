@@ -52,10 +52,10 @@ mkdir inCount
 if [ $1 = pi ]
 then
     echo "Raspberry Pi"
-    perf stat -o ./perf/pi/rle_pi.md -r 50 ./exe/rle_exe
-    perf stat -o ./perf/pi/rle_O1_pi.md -r 50 ./exe/exe_O1/rle_exe_O1
-    perf stat -o ./perf/pi/rle_O_pi.md -r 50 ./exe/exe_O2/rle_exe_O2
-    perf stat -o ./perf/pi/rle_O3_pi.md -r 50 ./exe/exe_O3/rle_exe_O3
+    perf_5.10 stat -o ./perf/pi/rle_pi.md -r 50 ./exe/rle_exe
+    perf_5.10 stat -o ./perf/pi/rle_O1_pi.md -r 50 ./exe/exe_O1/rle_exe_O1
+    perf_5.10 stat -o ./perf/pi/rle_O_pi.md -r 50 ./exe/exe_O2/rle_exe_O2
+    perf_5.10 stat -o ./perf/pi/rle_O3_pi.md -r 50 ./exe/exe_O3/rle_exe_O3
 
 elif [ $1 = ryzen ]
 then
