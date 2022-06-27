@@ -143,7 +143,7 @@ then
 
 fi
 
-mkdir inCount
+mkdir -p inCount
 ./counter.sh ./build/CMakeFiles/rle_exe.dir/rle_arr.c.s ./inCount/rle_default.csv
 ./counter.sh ./build/CMakeFiles/rle_exe_O1.dir/rle_arr.c.s ./inCount/rle_O1.csv
 ./counter.sh ./build/CMakeFiles/rle_exe_O2.dir/rle_arr.c.s ./inCount/rle_O2.csv
