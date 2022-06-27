@@ -27,24 +27,26 @@ then
     mkdir -p ./stuff/obj/pi/obj_g
 
     perf_5.10 stat -o ./stuff/perf/pi/rle_pi.md -r 50 ./exe/rle_exe
-    perf_5.10 stat -o ./stuff/perf/pi/rle_O1_pi.md -r 50 ./exe/exe_O1/rle_exe_O1
-    perf_5.10 stat -o ./stuff/perf/pi/rle_O_pi.md -r 50 ./exe/exe_O2/rle_exe_O2
-    perf_5.10 stat -o ./stuff/perf/pi/rle_O3_pi.md -r 50 ./exe/exe_O3/rle_exe_O3
+    perf_5.10 stat -o ./stuff/perf/pi/rle_O1_pi.md -r 50 ./exe/rle_exe_O1
+    perf_5.10 stat -o ./stuff/perf/pi/rle_O_pi.md -r 50 ./exe/rle_exe_O2
+    perf_5.10 stat -o ./stuff/perf/pi/rle_O3_pi.md -r 50 ./exe/rle_exe_O3
 
     cp ./build/CMakeFiles/rle_exe_O1.dir/rle*.c.o ./stuff/obj/pi/obj_O1
     cp ./build/CMakeFiles/rle_exe_O2.dir/rle*.c.o ./stuff/obj/pi/obj_O2
     cp ./build/CMakeFiles/rle_exe_O3.dir/rle*.c.o ./stuff/obj/pi/obj_O3
     cp ./build/CMakeFiles/rle_exe_g.dir/rle*.c.o ./stuff/obj/pi/obj_g
 
+    objdump -d --source ./stuff/obj/pi/rle_arr.c.o > ./stuff/obj/pi/rle_arr.c.asm_c
     objdump -d --source ./stuff/obj/pi/obj_O1/rle_arr.c.o > ./stuff/obj/pi/obj_O1/rle_arr_O1.c.asm_c
     objdump -d --source ./stuff/obj/pi/obj_O2/rle_arr.c.o > ./stuff/obj/pi/obj_O2/rle_arr_O2.c.asm_c
     objdump -d --source ./stuff/obj/pi/obj_O3/rle_arr.c.o > ./stuff/obj/pi/obj_O3/rle_arr_O3.c.asm_c
     objdump -d --source ./stuff/obj/pi/obj_g/rle_arr.c.o > ./stuff/obj/pi/obj_g/rle_arr_g.c.asm_c
 
-    objdump -d --source ./stuff/obj/pi_obj/obj_O1/rle_unpack.c.o > ./stuff/obj/obj_O1/rle_unpack_O1.c.asm_c
-    objdump -d --source ./stuff/obj/pi_obj/obj_O2/rle_unpack.c.o > ./stuff/obj/obj_O2/rle_unpack_O2.c.asm_c
-    objdump -d --source ./stuff/obj/pi_obj/obj_O3/rle_unpack.c.o > ./stuff/obj/obj_O3/rle_unpack_O3.c.asm_c
-    objdump -d --source ./stuff/obj/pi_obj/obj_g/rle_unpack.c.o > ./stuff/obj/obj_g/rle_unpack_g.c.asm_c
+    objdump -d --source ./stuff/obj/pi/rle_unpack.c.o > ./stuff/obj/pi/rle_unpack.c.asm_c
+    objdump -d --source ./stuff/obj/pi_obj/obj_O1/rle_unpack.c.o > ./stuff/obj/pi/obj_O1/rle_unpack_O1.c.asm_c
+    objdump -d --source ./stuff/obj/pi_obj/obj_O2/rle_unpack.c.o > ./stuff/obj/pi/obj_O2/rle_unpack_O2.c.asm_c
+    objdump -d --source ./stuff/obj/pi_obj/obj_O3/rle_unpack.c.o > ./stuff/obj/pi/obj_O3/rle_unpack_O3.c.asm_c
+    objdump -d --source ./stuff/obj/pi_obj/obj_g/rle_unpack.c.o > ./stuff/obj/pi/obj_g/rle_unpack_g.c.asm_c
 
 elif [ $1 = ryzen ]
 then
@@ -65,11 +67,13 @@ then
     cp ./build/CMakeFiles/rle_exe_O3.dir/rle*.c.o ./stuff/obj/ryzen/obj_O3
     cp ./build/CMakeFiles/rle_exe_g.dir/rle*.c.o ./stuff/obj/ryzen/obj_g
 
+    objdump -d --source ./stuff/obj/ryzen/rle_arr.c.o > ./stuff/obj/ryzen/rle_arr.c.asm_c
     objdump -d --source ./stuff/obj/ryzen/obj_O1/rle_arr.c.o > ./stuff/obj/ryzen/obj_O1/rle_arr_O1.c.asm_c
     objdump -d --source ./stuff/obj/ryzen/obj_O2/rle_arr.c.o > ./stuff/obj/ryzen/obj_O2/rle_arr_O2.c.asm_c
     objdump -d --source ./stuff/obj/ryzen/obj_O3/rle_arr.c.o > ./stuff/obj/ryzen/obj_O3/rle_arr_O3.c.asm_c
     objdump -d --source ./stuff/obj/ryzen/obj_g/rle_arr.c.o > .//stuff/obj/ryzen/obj_g/rle_arr_g.c.asm_c
 
+    objdump -d --source ./stuff/obj/ryzen/rle_unpack.c.o > ./stuff/obj/ryzen/rle_unpack.c.asm_c
     objdump -d --source ./stuff/obj/ryzen/obj_O1/rle_unpack.c.o > ./stuff/obj/ryzen/obj_O1/rle_unpack_O1.c.asm_c
     objdump -d --source ./stuff/obj/ryzen/obj_O2/rle_unpack.c.o > ./stuff/obj/ryzen/obj_O2/rle_unpack_O2.c.asm_c
     objdump -d --source ./stuff/obj/ryzen/obj_O3/rle_unpack.c.o > ./stuff/obj/ryzen/obj_O3/rle_unpack_O3.c.asm_c
@@ -94,11 +98,13 @@ then
     cp ./build/CMakeFiles/rle_exe_O3.dir/rle*.c.o ./stuff/obj/athlon/obj_O3
     cp ./build/CMakeFiles/rle_exe_g.dir/rle*.c.o ./stuff/obj/athlon/obj_g
 
+    objdump -d --source ./stuff/obj/athlon/rle_arr.c.o > ./stuff/obj/athlon/rle_arr.c.asm_c
     objdump -d --source ./stuff/obj/athlon/obj_O1/rle_arr.c.o > ./stuff/obj/athlon/obj_O1/rle_arr_O1.c.asm_c
     objdump -d --source ./stuff/obj/athlon/obj_O2/rle_arr.c.o > ./stuff/obj/athlon/obj_O2/rle_arr_O2.c.asm_c
     objdump -d --source ./stuff/obj/athlon/obj_O3/rle_arr.c.o > ./stuff/obj/athlon/obj_O3/rle_arr_O3.c.asm_c
     objdump -d --source ./stuff/obj/athlon/obj_g/rle_arr.c.o > .//stuff/obj/athlon/obj_g/rle_arr_g.c.asm_c
 
+    objdump -d --source ./stuff/obj/athlon/rle_unpack.c.o > ./stuff/obj/athlon/rle_unpack.c.asm_c
     objdump -d --source ./stuff/obj/athlon/obj_O1/rle_unpack.c.o > ./stuff/obj/athlon/obj_O1/rle_unpack_O1.c.asm_c
     objdump -d --source ./stuff/obj/athlon/obj_O2/rle_unpack.c.o > ./stuff/obj/athlon/obj_O2/rle_unpack_O2.c.asm_c
     objdump -d --source ./stuff/obj/athlon/obj_O3/rle_unpack.c.o > ./stuff/obj/athlon/obj_O3/rle_unpack_O3.c.asm_c
@@ -123,11 +129,13 @@ then
     cp ./build/CMakeFiles/rle_exe_O3.dir/rle*.c.o ./stuff/obj/opteron/obj_O3
     cp ./build/CMakeFiles/rle_exe_g.dir/rle*.c.o ./stuff/obj/opteron/obj_g
 
+    objdump -d --source ./stuff/obj/opteron/rle_arr.c.o > ./stuff/obj/opteron/rle_arr.c.asm_c
     objdump -d --source ./stuff/obj/opteron/obj_O1/rle_arr.c.o > ./stuff/obj/opteron/obj_O1/rle_arr_O1.c.asm_c
     objdump -d --source ./stuff/obj/opteron/obj_O2/rle_arr.c.o > ./stuff/obj/opteron/obj_O2/rle_arr_O2.c.asm_c
     objdump -d --source ./stuff/obj/opteron/obj_O3/rle_arr.c.o > ./stuff/obj/opteron/obj_O3/rle_arr_O3.c.asm_c
     objdump -d --source ./stuff/obj/opteron/obj_g/rle_arr.c.o > .//stuff/obj/opteron/obj_g/rle_arr_g.c.asm_c
 
+    objdump -d --source ./stuff/obj/opteron/rle_unpack.c.o > ./stuff/obj/opteron/rle_unpack.c.asm_c
     objdump -d --source ./stuff/obj/opteron/obj_O1/rle_unpack.c.o > ./stuff/obj/opteron/obj_O1/rle_unpack_O1.c.asm_c
     objdump -d --source ./stuff/obj/opteron/obj_O2/rle_unpack.c.o > ./stuff/obj/opteron/obj_O2/rle_unpack_O2.c.asm_c
     objdump -d --source ./stuff/obj/opteron/obj_O3/rle_unpack.c.o > ./stuff/obj/opteron/obj_O3/rle_unpack_O3.c.asm_c
