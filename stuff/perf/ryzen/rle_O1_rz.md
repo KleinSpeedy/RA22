@@ -1,23 +1,19 @@
-# started on Mon Jun 27 15:22:24 2022
+# started on Mon Jun 27 16:11:09 2022
 
 
  Performance counter stats for './exe/rle_exe_O1' (50 runs):
 
-              0,67 msec task-clock:u              #    0,561 CPUs utilized            ( +-  2,59% )
+              0,43 msec task-clock:u              #    0,384 CPUs utilized            ( +-  2,72% )
                  0      context-switches:u        #    0,000 /sec                   
                  0      cpu-migrations:u          #    0,000 /sec                   
-                50      page-faults:u             #   80,558 K/sec                    ( +-  0,29% )
-           378.901      cycles:u                  #    0,610 GHz                      ( +-  4,31% )
-            15.395      stalled-cycles-frontend:u #    4,02% frontend cycles idle     ( +-  2,74% )
-            76.593      stalled-cycles-backend:u  #   19,99% backend cycles idle      ( +-  3,60% )
-           739.428      instructions:u            #    1,93  insn per cycle         
-                                                  #    0,12  stalled cycles per insn  ( +-  0,00% )
-           153.417      branches:u                #  247,180 M/sec                    ( +-  0,00% )
-     <not counted>      branch-misses:u                                               (0,00%)
+                52      page-faults:u             #   83,294 K/sec                    ( +-  0,30% )
+                 0      cycles:u                  #    0,000 GHz                      (16,28%)
+            18.726      stalled-cycles-frontend:u #    5,27% frontend cycles idle     ( +-  1,07% )
+            97.795      stalled-cycles-backend:u  #   27,54% backend cycles idle      ( +-  1,11% )
+           739.430      instructions:u            #    2,08  insn per cycle         
+                                                  #    0,10  stalled cycles per insn  ( +-  0,00% )
+           153.419      branches:u                #  245,748 M/sec                    ( +-  0,00% )
+             5.356      branch-misses:u           #    3,49% of all branches          ( +-  5,74% )  (83,72%)
 
-         0,0012011 +- 0,0000307 seconds time elapsed  ( +-  2,56% )
+         0,0011258 +- 0,0000182 seconds time elapsed  ( +-  1,62% )
 
-Some events weren't counted. Try disabling the NMI watchdog:
-	echo 0 > /proc/sys/kernel/nmi_watchdog
-	perf stat ...
-	echo 1 > /proc/sys/kernel/nmi_watchdog

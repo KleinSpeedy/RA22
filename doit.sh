@@ -21,6 +21,7 @@ if [ $1 = pi ]
 then
     echo "Raspberry Pi"
     mkdir -p ./stuff/perf/pi
+    mkdir -p ./stuff/obj/pi/obj
     mkdir -p ./stuff/obj/pi/obj_O1
     mkdir -p ./stuff/obj/pi/obj_O2
     mkdir -p ./stuff/obj/pi/obj_O3
@@ -31,6 +32,7 @@ then
     perf_5.10 stat -o ./stuff/perf/pi/rle_O_pi.md -r 50 ./exe/rle_exe_O2
     perf_5.10 stat -o ./stuff/perf/pi/rle_O3_pi.md -r 50 ./exe/rle_exe_O3
 
+    cp ./build/CMakeFiles/rle_exe.dir/rle*.c.o ./stuff/obj/pi/
     cp ./build/CMakeFiles/rle_exe_O1.dir/rle*.c.o ./stuff/obj/pi/obj_O1
     cp ./build/CMakeFiles/rle_exe_O2.dir/rle*.c.o ./stuff/obj/pi/obj_O2
     cp ./build/CMakeFiles/rle_exe_O3.dir/rle*.c.o ./stuff/obj/pi/obj_O3
@@ -52,6 +54,7 @@ elif [ $1 = ryzen ]
 then
     echo "Ryzen"
     mkdir -p ./stuff/perf/ryzen
+    mkdir -p ./stuff/obj/ryzen/obj
     mkdir -p ./stuff/obj/ryzen/obj_O1
     mkdir -p ./stuff/obj/ryzen/obj_O2
     mkdir -p ./stuff/obj/ryzen/obj_O3
@@ -62,6 +65,7 @@ then
     perf stat -o ./stuff/perf/ryzen/rle_O2_rz.md -r 50 ./exe/rle_exe_O2
     perf stat -o ./stuff/perf/ryzen/rle_O3_rz.md -r 50 ./exe/rle_exe_O3
 
+    cp ./build/CMakeFiles/rle_exe_O1.dir/rle*.c.o ./stuff/obj/ryzen/
     cp ./build/CMakeFiles/rle_exe_O1.dir/rle*.c.o ./stuff/obj/ryzen/obj_O1
     cp ./build/CMakeFiles/rle_exe_O2.dir/rle*.c.o ./stuff/obj/ryzen/obj_O2
     cp ./build/CMakeFiles/rle_exe_O3.dir/rle*.c.o ./stuff/obj/ryzen/obj_O3
@@ -83,6 +87,7 @@ elif [ $1 = athlon ]
 then
     echo "Athlon"
     mkdir -p ./stuff/perf/athlon
+    mkdir -p ./stuff/obj/athlon/obj
     mkdir -p ./stuff/obj/athlon/obj_O1
     mkdir -p ./stuff/obj/athlon/obj_O2
     mkdir -p ./stuff/obj/athlon/obj_O3
@@ -93,6 +98,7 @@ then
     perf stat -o ./stuff/perf/athlon/rle_O2_ath.md -r 50 ./exe/rle_exe_O2
     perf stat -o ./stuff/perf/athlon/rle_O3_ath.md -r 50 ./exe/rle_exe_O3
 
+    cp ./build/CMakeFiles/rle_exe_O1.dir/rle*.c.o ./stuff/obj/athlon/
     cp ./build/CMakeFiles/rle_exe_O1.dir/rle*.c.o ./stuff/obj/athlon/obj_O1
     cp ./build/CMakeFiles/rle_exe_O2.dir/rle*.c.o ./stuff/obj/athlon/obj_O2
     cp ./build/CMakeFiles/rle_exe_O3.dir/rle*.c.o ./stuff/obj/athlon/obj_O3
@@ -114,6 +120,7 @@ elif [ $1 = opteron ]
 then
     echo "Opteron"
     mkdir -p ./stuff/perf/opteron
+    mkdir -p ./stuff/obj/opteron/obj
     mkdir -p ./stuff/obj/opteron/obj_O1
     mkdir -p ./stuff/obj/opteron/obj_O2
     mkdir -p ./stuff/obj/opteron/obj_O3
@@ -124,6 +131,7 @@ then
     perf stat -o ./stuff/perf/opteron/rle_O2_rz.md -r 50 ./exe/rle_exe_O2
     perf stat -o ./stuff/perf/opteron/rle_O3_rz.md -r 50 ./exe/rle_exe_O3
 
+    cp ./build/CMakeFiles/rle_exe_O1.dir/rle*.c.o ./stuff/obj/opteron/
     cp ./build/CMakeFiles/rle_exe_O1.dir/rle*.c.o ./stuff/obj/opteron/obj_O1
     cp ./build/CMakeFiles/rle_exe_O2.dir/rle*.c.o ./stuff/obj/opteron/obj_O2
     cp ./build/CMakeFiles/rle_exe_O3.dir/rle*.c.o ./stuff/obj/opteron/obj_O3
