@@ -1,16 +1,16 @@
-# started on Mon Jun 27 15:29:40 2022
+# started on Mon Jun 27 16:13:31 2022
 
 
  Performance counter stats for './exe/rle_exe_O1' (50 runs):
 
-              2.05 msec task-clock                #    0.416 CPUs utilized            ( +-  0.48% )
-                 0      context-switches          #    0.020 K/sec                    ( +-100.00% )
+              1.86 msec task-clock                #    0.419 CPUs utilized            ( +-  0.28% )
+                 0      context-switches          #    0.043 K/sec                    ( +- 48.45% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                40      page-faults               #    0.020 M/sec                    ( +-  0.19% )
-         2,439,142      cycles                    #    1.189 GHz                      ( +-  0.48% )
-         1,258,646      instructions              #    0.52  insn per cycle           ( +-  0.19% )
-           119,755      branches                  #   58.383 M/sec                    ( +-  0.21% )
-            24,053      branch-misses             #   20.09% of all branches          ( +-  0.16% )
+                40      page-faults               #    0.022 M/sec                    ( +-  0.19% )
+         2,209,546      cycles                    #    1.189 GHz                      ( +-  0.27% )
+         1,240,574      instructions              #    0.56  insn per cycle           ( +-  0.14% )
+           117,383      branches                  #   63.148 M/sec                    ( +-  0.12% )
+            23,631      branch-misses             #   20.13% of all branches          ( +-  0.11% )
 
-         0.0049342 +- 0.0000125 seconds time elapsed  ( +-  0.25% )
+         0.0044403 +- 0.0000111 seconds time elapsed  ( +-  0.25% )
 

@@ -1,16 +1,16 @@
-# started on Mon Jun 27 15:29:40 2022
+# started on Mon Jun 27 16:13:32 2022
 
 
  Performance counter stats for './exe/rle_exe_O2' (50 runs):
 
-              2.17 msec task-clock                #    0.407 CPUs utilized            ( +-  2.15% )
-                 0      context-switches          #    0.148 K/sec                    ( +- 50.06% )
+              2.28 msec task-clock                #    0.404 CPUs utilized            ( +-  2.33% )
+                 0      context-switches          #    0.026 K/sec                    ( +- 56.54% )
                  0      cpu-migrations            #    0.000 K/sec                  
                 40      page-faults               #    0.018 M/sec                    ( +-  0.19% )
-         2,357,107      cycles                    #    1.088 GHz                      ( +-  0.71% )
-         1,157,343      instructions              #    0.49  insn per cycle           ( +-  0.28% )
-           144,216      branches                  #   66.542 M/sec                    ( +-  0.26% )
-            23,930      branch-misses             #   16.59% of all branches          ( +-  0.29% )
+         2,083,501      cycles                    #    0.913 GHz                      ( +-  0.57% )
+         1,139,192      instructions              #    0.55  insn per cycle           ( +-  0.29% )
+           141,775      branches                  #   62.134 M/sec                    ( +-  0.23% )
+            23,396      branch-misses             #   16.50% of all branches          ( +-  0.18% )
 
-          0.005330 +- 0.000108 seconds time elapsed  ( +-  2.02% )
+          0.005646 +- 0.000134 seconds time elapsed  ( +-  2.38% )
 
