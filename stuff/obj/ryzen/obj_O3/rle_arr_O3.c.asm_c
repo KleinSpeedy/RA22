@@ -1,0 +1,43 @@
+
+./stuff/obj/ryzen/obj_O3/rle_arr.c.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rle_array>:
+   0:	44 0f b6 0f          	movzbl (%rdi),%r9d
+   4:	48 89 f8             	mov    %rdi,%rax
+   7:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+   d:	45 84 c9             	test   %r9b,%r9b
+  10:	74 59                	je     6b <rle_array+0x6b>
+  12:	44 89 ce             	mov    %r9d,%esi
+  15:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+  1b:	31 c0                	xor    %eax,%eax
+  1d:	31 d2                	xor    %edx,%edx
+  1f:	90                   	nop
+  20:	48 8d 54 17 01       	lea    0x1(%rdi,%rdx,1),%rdx
+  25:	b9 01 00 00 00       	mov    $0x1,%ecx
+  2a:	eb 0b                	jmp    37 <rle_array+0x37>
+  2c:	0f 1f 40 00          	nopl   0x0(%rax)
+  30:	83 c1 01             	add    $0x1,%ecx
+  33:	48 83 c2 01          	add    $0x1,%rdx
+  37:	83 c0 01             	add    $0x1,%eax
+  3a:	40 38 32             	cmp    %sil,(%rdx)
+  3d:	74 f1                	je     30 <rle_array+0x30>
+  3f:	83 c1 30             	add    $0x30,%ecx
+  42:	48 63 d0             	movslq %eax,%rdx
+  45:	42 88 4c 07 ff       	mov    %cl,-0x1(%rdi,%r8,1)
+  4a:	0f b6 34 17          	movzbl (%rdi,%rdx,1),%esi
+  4e:	49 8d 48 01          	lea    0x1(%r8),%rcx
+  52:	40 84 f6             	test   %sil,%sil
+  55:	74 09                	je     60 <rle_array+0x60>
+  57:	49 89 c8             	mov    %rcx,%r8
+  5a:	eb c4                	jmp    20 <rle_array+0x20>
+  5c:	0f 1f 40 00          	nopl   0x0(%rax)
+  60:	4d 63 c0             	movslq %r8d,%r8
+  63:	4a 8d 04 07          	lea    (%rdi,%r8,1),%rax
+  67:	49 83 c0 01          	add    $0x1,%r8
+  6b:	44 88 08             	mov    %r9b,(%rax)
+  6e:	48 89 f8             	mov    %rdi,%rax
+  71:	42 c6 04 07 00       	movb   $0x0,(%rdi,%r8,1)
+  76:	c3                   	ret    

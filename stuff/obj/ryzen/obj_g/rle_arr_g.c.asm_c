@@ -1,0 +1,101 @@
+
+./stuff/obj/ryzen/obj_g/rle_arr.c.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rle_array>:
+#include "rle_arr.h"
+
+char *rle_array(char str[])
+{
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+    char *p_str = str;
+   8:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+   c:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+    char first = str[0];
+  10:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  14:	0f b6 00             	movzbl (%rax),%eax
+  17:	88 45 eb             	mov    %al,-0x15(%rbp)
+    int pos = 0;
+  1a:	c7 45 ec 00 00 00 00 	movl   $0x0,-0x14(%rbp)
+
+    for (int i = 0; str[i] != '\0'; i++)
+  21:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%rbp)
+  28:	eb 6b                	jmp    95 <rle_array+0x95>
+    {
+        int count = 1;
+  2a:	c7 45 f4 01 00 00 00 	movl   $0x1,-0xc(%rbp)
+        while (str[i] != '\0' && str[i] == str[i + 1])
+  31:	eb 08                	jmp    3b <rle_array+0x3b>
+        {
+            count++;
+  33:	83 45 f4 01          	addl   $0x1,-0xc(%rbp)
+            i++;
+  37:	83 45 f0 01          	addl   $0x1,-0x10(%rbp)
+        while (str[i] != '\0' && str[i] == str[i + 1])
+  3b:	8b 45 f0             	mov    -0x10(%rbp),%eax
+  3e:	48 63 d0             	movslq %eax,%rdx
+  41:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  45:	48 01 d0             	add    %rdx,%rax
+  48:	0f b6 00             	movzbl (%rax),%eax
+  4b:	84 c0                	test   %al,%al
+  4d:	74 27                	je     76 <rle_array+0x76>
+  4f:	8b 45 f0             	mov    -0x10(%rbp),%eax
+  52:	48 63 d0             	movslq %eax,%rdx
+  55:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  59:	48 01 d0             	add    %rdx,%rax
+  5c:	0f b6 10             	movzbl (%rax),%edx
+  5f:	8b 45 f0             	mov    -0x10(%rbp),%eax
+  62:	48 98                	cltq   
+  64:	48 8d 48 01          	lea    0x1(%rax),%rcx
+  68:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  6c:	48 01 c8             	add    %rcx,%rax
+  6f:	0f b6 00             	movzbl (%rax),%eax
+  72:	38 c2                	cmp    %al,%dl
+  74:	74 bd                	je     33 <rle_array+0x33>
+        }
+        p_str[pos] = '0' + count;
+  76:	8b 45 f4             	mov    -0xc(%rbp),%eax
+  79:	8d 48 30             	lea    0x30(%rax),%ecx
+  7c:	8b 45 ec             	mov    -0x14(%rbp),%eax
+  7f:	48 63 d0             	movslq %eax,%rdx
+  82:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  86:	48 01 d0             	add    %rdx,%rax
+  89:	89 ca                	mov    %ecx,%edx
+  8b:	88 10                	mov    %dl,(%rax)
+        pos++;
+  8d:	83 45 ec 01          	addl   $0x1,-0x14(%rbp)
+    for (int i = 0; str[i] != '\0'; i++)
+  91:	83 45 f0 01          	addl   $0x1,-0x10(%rbp)
+  95:	8b 45 f0             	mov    -0x10(%rbp),%eax
+  98:	48 63 d0             	movslq %eax,%rdx
+  9b:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  9f:	48 01 d0             	add    %rdx,%rax
+  a2:	0f b6 00             	movzbl (%rax),%eax
+  a5:	84 c0                	test   %al,%al
+  a7:	75 81                	jne    2a <rle_array+0x2a>
+    }
+
+    p_str[pos] = first;
+  a9:	8b 45 ec             	mov    -0x14(%rbp),%eax
+  ac:	48 63 d0             	movslq %eax,%rdx
+  af:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  b3:	48 01 c2             	add    %rax,%rdx
+  b6:	0f b6 45 eb          	movzbl -0x15(%rbp),%eax
+  ba:	88 02                	mov    %al,(%rdx)
+    p_str[pos+1] = '\0';
+  bc:	8b 45 ec             	mov    -0x14(%rbp),%eax
+  bf:	48 98                	cltq   
+  c1:	48 8d 50 01          	lea    0x1(%rax),%rdx
+  c5:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  c9:	48 01 d0             	add    %rdx,%rax
+  cc:	c6 00 00             	movb   $0x0,(%rax)
+
+    return p_str;
+  cf:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+}
+  d3:	5d                   	pop    %rbp
+  d4:	c3                   	ret    
