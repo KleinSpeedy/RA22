@@ -1,0 +1,57 @@
+
+./stuff/obj/opteron/obj_O1/rle_unpack.c.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rle_unpack>:
+   0:	49 89 f8             	mov    %rdi,%r8
+   3:	b8 00 00 00 00       	mov    $0x0,%eax
+   8:	41 b9 00 00 00 00    	mov    $0x0,%r9d
+   e:	ba 00 00 00 00       	mov    $0x0,%edx
+  13:	41 ba 01 00 00 00    	mov    $0x1,%r10d
+  19:	eb 0b                	jmp    26 <rle_unpack+0x26>
+  1b:	44 8d 48 ff          	lea    -0x1(%rax),%r9d
+  1f:	44 89 d2             	mov    %r10d,%edx
+  22:	48 83 c0 01          	add    $0x1,%rax
+  26:	89 c1                	mov    %eax,%ecx
+  28:	41 80 3c 00 00       	cmpb   $0x0,(%r8,%rax,1)
+  2d:	40 0f 94 c6          	sete   %sil
+  31:	66 85 d2             	test   %dx,%dx
+  34:	75 05                	jne    3b <rle_unpack+0x3b>
+  36:	40 84 f6             	test   %sil,%sil
+  39:	75 e0                	jne    1b <rle_unpack+0x1b>
+  3b:	66 85 d2             	test   %dx,%dx
+  3e:	74 e2                	je     22 <rle_unpack+0x22>
+  40:	40 84 f6             	test   %sil,%sil
+  43:	74 dd                	je     22 <rle_unpack+0x22>
+  45:	83 e9 01             	sub    $0x1,%ecx
+  48:	4d 63 c9             	movslq %r9d,%r9
+  4b:	43 0f b6 34 08       	movzbl (%r8,%r9,1),%esi
+  50:	4f 8d 54 08 ff       	lea    -0x1(%r8,%r9,1),%r10
+  55:	85 c9                	test   %ecx,%ecx
+  57:	7e 42                	jle    9b <rle_unpack+0x9b>
+  59:	41 0f be 3a          	movsbl (%r10),%edi
+  5d:	83 ef 30             	sub    $0x30,%edi
+  60:	85 ff                	test   %edi,%edi
+  62:	7e 24                	jle    88 <rle_unpack+0x88>
+  64:	83 e9 01             	sub    $0x1,%ecx
+  67:	48 63 c9             	movslq %ecx,%rcx
+  6a:	48 89 c8             	mov    %rcx,%rax
+  6d:	44 8d 49 01          	lea    0x1(%rcx),%r9d
+  71:	41 88 74 00 01       	mov    %sil,0x1(%r8,%rax,1)
+  76:	89 c1                	mov    %eax,%ecx
+  78:	44 89 ca             	mov    %r9d,%edx
+  7b:	29 c2                	sub    %eax,%edx
+  7d:	0f bf d2             	movswl %dx,%edx
+  80:	48 83 e8 01          	sub    $0x1,%rax
+  84:	39 fa                	cmp    %edi,%edx
+  86:	7c e9                	jl     71 <rle_unpack+0x71>
+  88:	40 80 fe 31          	cmp    $0x31,%sil
+  8c:	40 0f 95 c6          	setne  %sil
+  90:	83 c6 30             	add    $0x30,%esi
+  93:	49 83 ea 01          	sub    $0x1,%r10
+  97:	85 c9                	test   %ecx,%ecx
+  99:	7f be                	jg     59 <rle_unpack+0x59>
+  9b:	4c 89 c0             	mov    %r8,%rax
+  9e:	c3                   	retq   

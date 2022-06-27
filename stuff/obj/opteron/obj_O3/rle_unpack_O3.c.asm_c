@@ -1,0 +1,210 @@
+
+./stuff/obj/opteron/obj_O3/rle_unpack.c.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rle_unpack>:
+   0:	41 54                	push   %r12
+   2:	49 89 f8             	mov    %rdi,%r8
+   5:	31 c0                	xor    %eax,%eax
+   7:	31 f6                	xor    %esi,%esi
+   9:	55                   	push   %rbp
+   a:	31 c9                	xor    %ecx,%ecx
+   c:	53                   	push   %rbx
+   d:	48 63 e8             	movslq %eax,%rbp
+  10:	41 80 3c 28 00       	cmpb   $0x0,(%r8,%rbp,1)
+  15:	0f 85 fd 01 00 00    	jne    218 <rle_unpack+0x218>
+  1b:	8d 50 ff             	lea    -0x1(%rax),%edx
+  1e:	66 85 c9             	test   %cx,%cx
+  21:	0f 85 59 02 00 00    	jne    280 <rle_unpack+0x280>
+  27:	8d 48 01             	lea    0x1(%rax),%ecx
+  2a:	48 63 f1             	movslq %ecx,%rsi
+  2d:	41 80 3c 30 00       	cmpb   $0x0,(%r8,%rsi,1)
+  32:	0f 85 18 02 00 00    	jne    250 <rle_unpack+0x250>
+  38:	48 63 d2             	movslq %edx,%rdx
+  3b:	41 0f b6 34 10       	movzbl (%r8,%rdx,1),%esi
+  40:	85 c0                	test   %eax,%eax
+  42:	0f 8e c4 01 00 00    	jle    20c <rle_unpack+0x20c>
+  48:	f3 0f 7e 2d 00 00 00 	movq   0x0(%rip),%xmm5        # 50 <rle_unpack+0x50>
+  4f:	00 
+  50:	66 0f 6f 35 00 00 00 	movdqa 0x0(%rip),%xmm6        # 58 <rle_unpack+0x58>
+  57:	00 
+  58:	49 8d 5c 10 ff       	lea    -0x1(%r8,%rdx,1),%rbx
+  5d:	66 0f 6f 25 00 00 00 	movdqa 0x0(%rip),%xmm4        # 65 <rle_unpack+0x65>
+  64:	00 
+  65:	66 0f 6f 1d 00 00 00 	movdqa 0x0(%rip),%xmm3        # 6d <rle_unpack+0x6d>
+  6c:	00 
+  6d:	0f 1f 00             	nopl   (%rax)
+  70:	44 0f be 1b          	movsbl (%rbx),%r11d
+  74:	41 8d 7b d0          	lea    -0x30(%r11),%edi
+  78:	85 ff                	test   %edi,%edi
+  7a:	0f 8e f0 01 00 00    	jle    270 <rle_unpack+0x270>
+  80:	41 8d 53 cf          	lea    -0x31(%r11),%edx
+  84:	81 fa fe 7f 00 00    	cmp    $0x7ffe,%edx
+  8a:	0f 87 90 01 00 00    	ja     220 <rle_unpack+0x220>
+  90:	83 fa 06             	cmp    $0x6,%edx
+  93:	0f 86 87 01 00 00    	jbe    220 <rle_unpack+0x220>
+  99:	83 fa 0e             	cmp    $0xe,%edx
+  9c:	0f 86 f6 01 00 00    	jbe    298 <rle_unpack+0x298>
+  a2:	66 0f 6e d6          	movd   %esi,%xmm2
+  a6:	66 0f 6e f8          	movd   %eax,%xmm7
+  aa:	41 89 f9             	mov    %edi,%r9d
+  ad:	48 63 e8             	movslq %eax,%rbp
+  b0:	66 0f 60 d2          	punpcklbw %xmm2,%xmm2
+  b4:	66 0f 70 cf 00       	pshufd $0x0,%xmm7,%xmm1
+  b9:	41 c1 e9 04          	shr    $0x4,%r9d
+  bd:	31 d2                	xor    %edx,%edx
+  bf:	66 0f 61 d2          	punpcklwd %xmm2,%xmm2
+  c3:	66 0f fe ce          	paddd  %xmm6,%xmm1
+  c7:	49 8d 4c 28 f1       	lea    -0xf(%r8,%rbp,1),%rcx
+  cc:	66 0f 70 d2 00       	pshufd $0x0,%xmm2,%xmm2
+  d1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  d8:	66 0f 6f c1          	movdqa %xmm1,%xmm0
+  dc:	83 c2 01             	add    $0x1,%edx
+  df:	0f 11 11             	movups %xmm2,(%rcx)
+  e2:	66 0f fe cc          	paddd  %xmm4,%xmm1
+  e6:	66 0f fe c3          	paddd  %xmm3,%xmm0
+  ea:	48 83 e9 10          	sub    $0x10,%rcx
+  ee:	41 39 d1             	cmp    %edx,%r9d
+  f1:	77 e5                	ja     d8 <rle_unpack+0xd8>
+  f3:	41 89 fa             	mov    %edi,%r10d
+  f6:	66 0f 70 c0 ff       	pshufd $0xff,%xmm0,%xmm0
+  fb:	41 83 e2 f0          	and    $0xfffffff0,%r10d
+  ff:	44 29 d0             	sub    %r10d,%eax
+ 102:	45 89 d1             	mov    %r10d,%r9d
+ 105:	89 c1                	mov    %eax,%ecx
+ 107:	44 39 d7             	cmp    %r10d,%edi
+ 10a:	0f 84 9c 01 00 00    	je     2ac <rle_unpack+0x2ac>
+ 110:	45 29 d3             	sub    %r10d,%r11d
+ 113:	45 8d 63 d0          	lea    -0x30(%r11),%r12d
+ 117:	41 83 eb 31          	sub    $0x31,%r11d
+ 11b:	41 83 fb 06          	cmp    $0x6,%r11d
+ 11f:	76 50                	jbe    171 <rle_unpack+0x171>
+ 121:	89 f0                	mov    %esi,%eax
+ 123:	40 0f b6 d6          	movzbl %sil,%edx
+ 127:	c1 e0 08             	shl    $0x8,%eax
+ 12a:	09 d0                	or     %edx,%eax
+ 12c:	4c 89 c2             	mov    %r8,%rdx
+ 12f:	66 0f 6e f8          	movd   %eax,%xmm7
+ 133:	4c 29 d2             	sub    %r10,%rdx
+ 136:	8d 41 ff             	lea    -0x1(%rcx),%eax
+ 139:	f2 0f 70 c7 00       	pshuflw $0x0,%xmm7,%xmm0
+ 13e:	66 0f 6e f8          	movd   %eax,%xmm7
+ 142:	66 0f d6 44 2a f9    	movq   %xmm0,-0x7(%rdx,%rbp,1)
+ 148:	66 0f 6e c1          	movd   %ecx,%xmm0
+ 14c:	44 89 e2             	mov    %r12d,%edx
+ 14f:	66 0f 62 c7          	punpckldq %xmm7,%xmm0
+ 153:	83 e2 f8             	and    $0xfffffff8,%edx
+ 156:	66 0f fe c5          	paddd  %xmm5,%xmm0
+ 15a:	29 d1                	sub    %edx,%ecx
+ 15c:	41 01 d1             	add    %edx,%r9d
+ 15f:	66 0f 70 f8 e5       	pshufd $0xe5,%xmm0,%xmm7
+ 164:	66 0f 7e f8          	movd   %xmm7,%eax
+ 168:	41 39 d4             	cmp    %edx,%r12d
+ 16b:	0f 84 84 00 00 00    	je     1f5 <rle_unpack+0x1f5>
+ 171:	41 8d 51 01          	lea    0x1(%r9),%edx
+ 175:	48 63 c1             	movslq %ecx,%rax
+ 178:	0f bf d2             	movswl %dx,%edx
+ 17b:	41 88 34 00          	mov    %sil,(%r8,%rax,1)
+ 17f:	8d 41 ff             	lea    -0x1(%rcx),%eax
+ 182:	39 fa                	cmp    %edi,%edx
+ 184:	7d 6f                	jge    1f5 <rle_unpack+0x1f5>
+ 186:	41 8d 51 02          	lea    0x2(%r9),%edx
+ 18a:	48 98                	cltq   
+ 18c:	0f bf d2             	movswl %dx,%edx
+ 18f:	41 88 34 00          	mov    %sil,(%r8,%rax,1)
+ 193:	8d 41 fe             	lea    -0x2(%rcx),%eax
+ 196:	39 fa                	cmp    %edi,%edx
+ 198:	7d 5b                	jge    1f5 <rle_unpack+0x1f5>
+ 19a:	41 8d 51 03          	lea    0x3(%r9),%edx
+ 19e:	48 98                	cltq   
+ 1a0:	0f bf d2             	movswl %dx,%edx
+ 1a3:	41 88 34 00          	mov    %sil,(%r8,%rax,1)
+ 1a7:	8d 41 fd             	lea    -0x3(%rcx),%eax
+ 1aa:	39 d7                	cmp    %edx,%edi
+ 1ac:	7e 47                	jle    1f5 <rle_unpack+0x1f5>
+ 1ae:	41 8d 51 04          	lea    0x4(%r9),%edx
+ 1b2:	48 98                	cltq   
+ 1b4:	0f bf d2             	movswl %dx,%edx
+ 1b7:	41 88 34 00          	mov    %sil,(%r8,%rax,1)
+ 1bb:	8d 41 fc             	lea    -0x4(%rcx),%eax
+ 1be:	39 d7                	cmp    %edx,%edi
+ 1c0:	7e 33                	jle    1f5 <rle_unpack+0x1f5>
+ 1c2:	41 8d 51 05          	lea    0x5(%r9),%edx
+ 1c6:	48 98                	cltq   
+ 1c8:	0f bf d2             	movswl %dx,%edx
+ 1cb:	41 88 34 00          	mov    %sil,(%r8,%rax,1)
+ 1cf:	8d 41 fb             	lea    -0x5(%rcx),%eax
+ 1d2:	39 d7                	cmp    %edx,%edi
+ 1d4:	7e 1f                	jle    1f5 <rle_unpack+0x1f5>
+ 1d6:	41 83 c1 06          	add    $0x6,%r9d
+ 1da:	48 98                	cltq   
+ 1dc:	45 0f bf c9          	movswl %r9w,%r9d
+ 1e0:	41 88 34 00          	mov    %sil,(%r8,%rax,1)
+ 1e4:	8d 41 fa             	lea    -0x6(%rcx),%eax
+ 1e7:	44 39 cf             	cmp    %r9d,%edi
+ 1ea:	7e 09                	jle    1f5 <rle_unpack+0x1f5>
+ 1ec:	48 98                	cltq   
+ 1ee:	41 88 34 00          	mov    %sil,(%r8,%rax,1)
+ 1f2:	8d 41 f9             	lea    -0x7(%rcx),%eax
+ 1f5:	40 80 fe 31          	cmp    $0x31,%sil
+ 1f9:	40 0f 95 c6          	setne  %sil
+ 1fd:	83 c6 30             	add    $0x30,%esi
+ 200:	48 83 eb 01          	sub    $0x1,%rbx
+ 204:	85 c0                	test   %eax,%eax
+ 206:	0f 8f 64 fe ff ff    	jg     70 <rle_unpack+0x70>
+ 20c:	5b                   	pop    %rbx
+ 20d:	4c 89 c0             	mov    %r8,%rax
+ 210:	5d                   	pop    %rbp
+ 211:	41 5c                	pop    %r12
+ 213:	c3                   	retq   
+ 214:	0f 1f 40 00          	nopl   0x0(%rax)
+ 218:	83 c0 01             	add    $0x1,%eax
+ 21b:	e9 ed fd ff ff       	jmpq   d <rle_unpack+0xd>
+ 220:	83 e8 01             	sub    $0x1,%eax
+ 223:	48 63 d0             	movslq %eax,%rdx
+ 226:	44 8d 48 01          	lea    0x1(%rax),%r9d
+ 22a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 230:	44 89 c9             	mov    %r9d,%ecx
+ 233:	41 88 74 10 01       	mov    %sil,0x1(%r8,%rdx,1)
+ 238:	89 d0                	mov    %edx,%eax
+ 23a:	29 d1                	sub    %edx,%ecx
+ 23c:	48 83 ea 01          	sub    $0x1,%rdx
+ 240:	0f bf c9             	movswl %cx,%ecx
+ 243:	39 cf                	cmp    %ecx,%edi
+ 245:	7f e9                	jg     230 <rle_unpack+0x230>
+ 247:	eb ac                	jmp    1f5 <rle_unpack+0x1f5>
+ 249:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 250:	8d 70 02             	lea    0x2(%rax),%esi
+ 253:	48 63 f6             	movslq %esi,%rsi
+ 256:	41 80 3c 30 00       	cmpb   $0x0,(%r8,%rsi,1)
+ 25b:	75 2c                	jne    289 <rle_unpack+0x289>
+ 25d:	48 63 d2             	movslq %edx,%rdx
+ 260:	89 c8                	mov    %ecx,%eax
+ 262:	41 0f b6 34 10       	movzbl (%r8,%rdx,1),%esi
+ 267:	e9 dc fd ff ff       	jmpq   48 <rle_unpack+0x48>
+ 26c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 270:	40 80 fe 31          	cmp    $0x31,%sil
+ 274:	74 3f                	je     2b5 <rle_unpack+0x2b5>
+ 276:	be 31 00 00 00       	mov    $0x31,%esi
+ 27b:	eb 83                	jmp    200 <rle_unpack+0x200>
+ 27d:	0f 1f 00             	nopl   (%rax)
+ 280:	89 d0                	mov    %edx,%eax
+ 282:	89 f2                	mov    %esi,%edx
+ 284:	e9 af fd ff ff       	jmpq   38 <rle_unpack+0x38>
+ 289:	83 c0 03             	add    $0x3,%eax
+ 28c:	89 d6                	mov    %edx,%esi
+ 28e:	b9 01 00 00 00       	mov    $0x1,%ecx
+ 293:	e9 75 fd ff ff       	jmpq   d <rle_unpack+0xd>
+ 298:	48 63 e8             	movslq %eax,%rbp
+ 29b:	41 89 fc             	mov    %edi,%r12d
+ 29e:	45 31 d2             	xor    %r10d,%r10d
+ 2a1:	45 31 c9             	xor    %r9d,%r9d
+ 2a4:	48 89 e9             	mov    %rbp,%rcx
+ 2a7:	e9 75 fe ff ff       	jmpq   121 <rle_unpack+0x121>
+ 2ac:	66 0f 7e c0          	movd   %xmm0,%eax
+ 2b0:	e9 40 ff ff ff       	jmpq   1f5 <rle_unpack+0x1f5>
+ 2b5:	48 83 eb 01          	sub    $0x1,%rbx
+ 2b9:	be 30 00 00 00       	mov    $0x30,%esi
+ 2be:	e9 ad fd ff ff       	jmpq   70 <rle_unpack+0x70>

@@ -1,0 +1,42 @@
+
+./stuff/obj/opteron/obj_O1/rle_arr.c.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rle_array>:
+   0:	44 0f b6 0f          	movzbl (%rdi),%r9d
+   4:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+   a:	b9 00 00 00 00       	mov    $0x0,%ecx
+   f:	ba 00 00 00 00       	mov    $0x0,%edx
+  14:	45 84 c9             	test   %r9b,%r9b
+  17:	75 30                	jne    49 <rle_array+0x49>
+  19:	48 63 d2             	movslq %edx,%rdx
+  1c:	44 88 0c 17          	mov    %r9b,(%rdi,%rdx,1)
+  20:	c6 44 17 01 00       	movb   $0x0,0x1(%rdi,%rdx,1)
+  25:	48 89 f8             	mov    %rdi,%rax
+  28:	c3                   	retq   
+  29:	be 01 00 00 00       	mov    $0x1,%esi
+  2e:	83 c6 30             	add    $0x30,%esi
+  31:	42 88 74 07 ff       	mov    %sil,-0x1(%rdi,%r8,1)
+  36:	44 89 c2             	mov    %r8d,%edx
+  39:	83 c1 01             	add    $0x1,%ecx
+  3c:	49 83 c0 01          	add    $0x1,%r8
+  40:	48 63 c1             	movslq %ecx,%rax
+  43:	80 3c 07 00          	cmpb   $0x0,(%rdi,%rax,1)
+  47:	74 d0                	je     19 <rle_array+0x19>
+  49:	48 63 c1             	movslq %ecx,%rax
+  4c:	0f b6 14 07          	movzbl (%rdi,%rax,1),%edx
+  50:	84 d2                	test   %dl,%dl
+  52:	74 d5                	je     29 <rle_array+0x29>
+  54:	48 8d 44 07 01       	lea    0x1(%rdi,%rax,1),%rax
+  59:	be 01 00 00 00       	mov    $0x1,%esi
+  5e:	38 10                	cmp    %dl,(%rax)
+  60:	75 cc                	jne    2e <rle_array+0x2e>
+  62:	83 c6 01             	add    $0x1,%esi
+  65:	83 c1 01             	add    $0x1,%ecx
+  68:	48 83 c0 01          	add    $0x1,%rax
+  6c:	0f b6 50 ff          	movzbl -0x1(%rax),%edx
+  70:	84 d2                	test   %dl,%dl
+  72:	75 ea                	jne    5e <rle_array+0x5e>
+  74:	eb b8                	jmp    2e <rle_array+0x2e>

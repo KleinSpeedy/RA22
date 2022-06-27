@@ -1,0 +1,50 @@
+
+./stuff/obj/opteron/obj_O2/rle_arr.c.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rle_array>:
+   0:	44 0f b6 17          	movzbl (%rdi),%r10d
+   4:	49 89 f9             	mov    %rdi,%r9
+   7:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+   d:	31 f6                	xor    %esi,%esi
+   f:	48 89 f8             	mov    %rdi,%rax
+  12:	ba 01 00 00 00       	mov    $0x1,%edx
+  17:	44 89 d1             	mov    %r10d,%ecx
+  1a:	45 84 d2             	test   %r10b,%r10b
+  1d:	74 46                	je     65 <rle_array+0x65>
+  1f:	90                   	nop
+  20:	48 63 c6             	movslq %esi,%rax
+  23:	ba 01 00 00 00       	mov    $0x1,%edx
+  28:	49 8d 44 01 01       	lea    0x1(%r9,%rax,1),%rax
+  2d:	eb 0f                	jmp    3e <rle_array+0x3e>
+  2f:	90                   	nop
+  30:	0f b6 08             	movzbl (%rax),%ecx
+  33:	48 83 c0 01          	add    $0x1,%rax
+  37:	83 c2 01             	add    $0x1,%edx
+  3a:	84 c9                	test   %cl,%cl
+  3c:	74 3a                	je     78 <rle_array+0x78>
+  3e:	8d 3c 32             	lea    (%rdx,%rsi,1),%edi
+  41:	38 08                	cmp    %cl,(%rax)
+  43:	74 eb                	je     30 <rle_array+0x30>
+  45:	83 c2 30             	add    $0x30,%edx
+  48:	89 fe                	mov    %edi,%esi
+  4a:	43 88 54 01 ff       	mov    %dl,-0x1(%r9,%r8,1)
+  4f:	0f b6 08             	movzbl (%rax),%ecx
+  52:	49 63 d0             	movslq %r8d,%rdx
+  55:	49 83 c0 01          	add    $0x1,%r8
+  59:	84 c9                	test   %cl,%cl
+  5b:	75 c3                	jne    20 <rle_array+0x20>
+  5d:	49 8d 04 11          	lea    (%r9,%rdx,1),%rax
+  61:	48 83 c2 01          	add    $0x1,%rdx
+  65:	44 88 10             	mov    %r10b,(%rax)
+  68:	4c 89 c8             	mov    %r9,%rax
+  6b:	41 c6 04 11 00       	movb   $0x0,(%r9,%rdx,1)
+  70:	c3                   	retq   
+  71:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  78:	8d 77 01             	lea    0x1(%rdi),%esi
+  7b:	83 c2 30             	add    $0x30,%edx
+  7e:	48 63 c6             	movslq %esi,%rax
+  81:	4c 01 c8             	add    %r9,%rax
+  84:	eb c4                	jmp    4a <rle_array+0x4a>
