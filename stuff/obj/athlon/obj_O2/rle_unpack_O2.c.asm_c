@@ -1,0 +1,53 @@
+
+./stuff/obj/athlon/obj_O2/rle_unpack.c.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rle_unpack>:
+   0:	49 89 f8             	mov    %rdi,%r8
+   3:	31 c0                	xor    %eax,%eax
+   5:	31 d2                	xor    %edx,%edx
+   7:	31 f6                	xor    %esi,%esi
+   9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  10:	41 80 3c 00 00       	cmpb   $0x0,(%r8,%rax,1)
+  15:	75 71                	jne    88 <rle_unpack+0x88>
+  17:	8d 48 ff             	lea    -0x1(%rax),%ecx
+  1a:	66 85 f6             	test   %si,%si
+  1d:	74 61                	je     80 <rle_unpack+0x80>
+  1f:	41 0f b6 34 10       	movzbl (%r8,%rdx,1),%esi
+  24:	4d 8d 54 10 ff       	lea    -0x1(%r8,%rdx,1),%r10
+  29:	83 f8 01             	cmp    $0x1,%eax
+  2c:	7e 4d                	jle    7b <rle_unpack+0x7b>
+  2e:	66 90                	xchg   %ax,%ax
+  30:	41 0f be 3a          	movsbl (%r10),%edi
+  34:	89 f8                	mov    %edi,%eax
+  36:	83 ef 30             	sub    $0x30,%edi
+  39:	3c 30                	cmp    $0x30,%al
+  3b:	7e 2b                	jle    68 <rle_unpack+0x68>
+  3d:	83 e9 01             	sub    $0x1,%ecx
+  40:	48 63 c1             	movslq %ecx,%rax
+  43:	44 8d 49 01          	lea    0x1(%rcx),%r9d
+  47:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  4e:	00 00 
+  50:	44 89 ca             	mov    %r9d,%edx
+  53:	41 88 74 00 01       	mov    %sil,0x1(%r8,%rax,1)
+  58:	48 89 c1             	mov    %rax,%rcx
+  5b:	29 c2                	sub    %eax,%edx
+  5d:	48 83 e8 01          	sub    $0x1,%rax
+  61:	0f bf d2             	movswl %dx,%edx
+  64:	39 fa                	cmp    %edi,%edx
+  66:	7c e8                	jl     50 <rle_unpack+0x50>
+  68:	40 80 fe 31          	cmp    $0x31,%sil
+  6c:	40 0f 95 c6          	setne  %sil
+  70:	49 83 ea 01          	sub    $0x1,%r10
+  74:	83 c6 30             	add    $0x30,%esi
+  77:	85 c9                	test   %ecx,%ecx
+  79:	7f b5                	jg     30 <rle_unpack+0x30>
+  7b:	4c 89 c0             	mov    %r8,%rax
+  7e:	c3                   	ret    
+  7f:	90                   	nop
+  80:	48 63 d1             	movslq %ecx,%rdx
+  83:	be 01 00 00 00       	mov    $0x1,%esi
+  88:	48 83 c0 01          	add    $0x1,%rax
+  8c:	eb 82                	jmp    10 <rle_unpack+0x10>

@@ -1,0 +1,42 @@
+
+./stuff/obj/athlon/obj_O1/rle_arr.c.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rle_array>:
+   0:	44 0f b6 0f          	movzbl (%rdi),%r9d
+   4:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+   a:	b9 00 00 00 00       	mov    $0x0,%ecx
+   f:	45 84 c9             	test   %r9b,%r9b
+  12:	75 36                	jne    4a <rle_array+0x4a>
+  14:	41 b8 00 00 00 00    	mov    $0x0,%r8d
+  1a:	49 63 c0             	movslq %r8d,%rax
+  1d:	44 88 0c 07          	mov    %r9b,(%rdi,%rax,1)
+  21:	c6 44 07 01 00       	movb   $0x0,0x1(%rdi,%rax,1)
+  26:	48 89 f8             	mov    %rdi,%rax
+  29:	c3                   	ret    
+  2a:	be 01 00 00 00       	mov    $0x1,%esi
+  2f:	83 c6 30             	add    $0x30,%esi
+  32:	42 88 74 07 ff       	mov    %sil,-0x1(%rdi,%r8,1)
+  37:	83 c1 01             	add    $0x1,%ecx
+  3a:	49 8d 50 01          	lea    0x1(%r8),%rdx
+  3e:	48 63 c1             	movslq %ecx,%rax
+  41:	80 3c 07 00          	cmpb   $0x0,(%rdi,%rax,1)
+  45:	74 d3                	je     1a <rle_array+0x1a>
+  47:	49 89 d0             	mov    %rdx,%r8
+  4a:	48 63 c1             	movslq %ecx,%rax
+  4d:	0f b6 14 07          	movzbl (%rdi,%rax,1),%edx
+  51:	84 d2                	test   %dl,%dl
+  53:	74 d5                	je     2a <rle_array+0x2a>
+  55:	48 8d 44 07 01       	lea    0x1(%rdi,%rax,1),%rax
+  5a:	be 01 00 00 00       	mov    $0x1,%esi
+  5f:	38 10                	cmp    %dl,(%rax)
+  61:	75 cc                	jne    2f <rle_array+0x2f>
+  63:	83 c6 01             	add    $0x1,%esi
+  66:	83 c1 01             	add    $0x1,%ecx
+  69:	48 83 c0 01          	add    $0x1,%rax
+  6d:	0f b6 50 ff          	movzbl -0x1(%rax),%edx
+  71:	84 d2                	test   %dl,%dl
+  73:	75 ea                	jne    5f <rle_array+0x5f>
+  75:	eb b8                	jmp    2f <rle_array+0x2f>

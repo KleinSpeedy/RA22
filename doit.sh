@@ -89,9 +89,9 @@ then
     mkdir -p ./stuff/obj/athlon/obj_g
 
     perf stat -o ./stuff/perf/athlon/rle_ath.md -r 50 ./exe/rle_exe
-    perf stat -o ./stuff/perf/athlon/rle_O1_ath.md -r 50 ./exe/exe_O1/rle_exe_O1
-    perf stat -o ./stuff/perf/athlon/rle_O2_ath.md -r 50 ./exe/exe_O2/rle_exe_O2
-    perf stat -o ./stuff/perf/athlon/rle_O3_ath.md -r 50 ./exe/exe_O3/rle_exe_O3
+    perf stat -o ./stuff/perf/athlon/rle_O1_ath.md -r 50 ./exe/rle_exe_O1
+    perf stat -o ./stuff/perf/athlon/rle_O2_ath.md -r 50 ./exe/rle_exe_O2
+    perf stat -o ./stuff/perf/athlon/rle_O3_ath.md -r 50 ./exe/rle_exe_O3
 
     cp ./build/CMakeFiles/rle_exe_O1.dir/rle*.c.o ./stuff/obj/athlon/obj_O1
     cp ./build/CMakeFiles/rle_exe_O2.dir/rle*.c.o ./stuff/obj/athlon/obj_O2
@@ -120,9 +120,9 @@ then
     mkdir -p ./stuff/obj/opteron/obj_g
 
     perf stat -o ./stuff/perf/opteron/rle_rz.md -r 50 ./exe/rle_exe
-    perf stat -o ./stuff/perf/opteron/rle_O1_rz.md -r 50 ./exe/exe_O1/rle_exe_O1
-    perf stat -o ./stuff/perf/opteron/rle_O2_rz.md -r 50 ./exe/exe_O2/rle_exe_O2
-    perf stat -o ./stuff/perf/opteron/rle_O3_rz.md -r 50 ./exe/exe_O3/rle_exe_O3
+    perf stat -o ./stuff/perf/opteron/rle_O1_rz.md -r 50 ./exe/rle_exe_O1
+    perf stat -o ./stuff/perf/opteron/rle_O2_rz.md -r 50 ./exe/rle_exe_O2
+    perf stat -o ./stuff/perf/opteron/rle_O3_rz.md -r 50 ./exe/rle_exe_O3
 
     cp ./build/CMakeFiles/rle_exe_O1.dir/rle*.c.o ./stuff/obj/opteron/obj_O1
     cp ./build/CMakeFiles/rle_exe_O2.dir/rle*.c.o ./stuff/obj/opteron/obj_O2
