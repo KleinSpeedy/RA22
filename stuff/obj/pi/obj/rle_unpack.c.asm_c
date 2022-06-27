@@ -1,36 +1,23 @@
 
-./stuff/obj/pi/obj_g/rle_unpack.c.o:     file format elf32-littlearm
+./stuff/obj/pi/obj/rle_unpack.c.o:     file format elf32-littlearm
 
 
 Disassembly of section .text:
 
 00000000 <rle_unpack>:
-#include "rle_unpack.h"
-
-char* rle_unpack(char* str)
-{   
    0:	e52db004 	push	{fp}		; (str fp, [sp, #-4]!)
    4:	e28db000 	add	fp, sp, #0
    8:	e24dd024 	sub	sp, sp, #36	; 0x24
    c:	e50b0020 	str	r0, [fp, #-32]	; 0xffffffe0
-    short esc = 0;
   10:	e3a03000 	mov	r3, #0
   14:	e14b30b6 	strh	r3, [fp, #-6]
-    int size = 0;
   18:	e3a03000 	mov	r3, #0
   1c:	e50b300c 	str	r3, [fp, #-12]
-    int comp_size = 0;
   20:	e3a03000 	mov	r3, #0
   24:	e50b3010 	str	r3, [fp, #-16]
-    char first;
-    short count;
-
-    for (int i = 0; esc < 2; i++)
   28:	e3a03000 	mov	r3, #0
   2c:	e50b3018 	str	r3, [fp, #-24]	; 0xffffffe8
   30:	ea000025 	b	cc <rle_unpack+0xcc>
-    {
-        if (str[i] == '\0' && esc == 0) 
   34:	e51b3018 	ldr	r3, [fp, #-24]	; 0xffffffe8
   38:	e51b2020 	ldr	r2, [fp, #-32]	; 0xffffffe0
   3c:	e0823003 	add	r3, r2, r3
@@ -40,20 +27,15 @@ char* rle_unpack(char* str)
   4c:	e15b30f6 	ldrsh	r3, [fp, #-6]
   50:	e3530000 	cmp	r3, #0
   54:	1a000008 	bne	7c <rle_unpack+0x7c>
-        {
-            esc++;
   58:	e15b30f6 	ldrsh	r3, [fp, #-6]
   5c:	e6ff3073 	uxth	r3, r3
   60:	e2833001 	add	r3, r3, #1
   64:	e6ff3073 	uxth	r3, r3
   68:	e14b30b6 	strh	r3, [fp, #-6]
-            comp_size = i - 1;
   6c:	e51b3018 	ldr	r3, [fp, #-24]	; 0xffffffe8
   70:	e2433001 	sub	r3, r3, #1
   74:	e50b3010 	str	r3, [fp, #-16]
   78:	ea000010 	b	c0 <rle_unpack+0xc0>
-        }
-        else if ( str[i] == '\0' && esc == 1)
   7c:	e51b3018 	ldr	r3, [fp, #-24]	; 0xffffffe8
   80:	e51b2020 	ldr	r2, [fp, #-32]	; 0xffffffe0
   84:	e0823003 	add	r3, r2, r3
@@ -63,63 +45,45 @@ char* rle_unpack(char* str)
   94:	e15b30f6 	ldrsh	r3, [fp, #-6]
   98:	e3530001 	cmp	r3, #1
   9c:	1a000007 	bne	c0 <rle_unpack+0xc0>
-        {
-            esc++;
   a0:	e15b30f6 	ldrsh	r3, [fp, #-6]
   a4:	e6ff3073 	uxth	r3, r3
   a8:	e2833001 	add	r3, r3, #1
   ac:	e6ff3073 	uxth	r3, r3
   b0:	e14b30b6 	strh	r3, [fp, #-6]
-            size = i - 1;
   b4:	e51b3018 	ldr	r3, [fp, #-24]	; 0xffffffe8
   b8:	e2433001 	sub	r3, r3, #1
   bc:	e50b300c 	str	r3, [fp, #-12]
-    for (int i = 0; esc < 2; i++)
   c0:	e51b3018 	ldr	r3, [fp, #-24]	; 0xffffffe8
   c4:	e2833001 	add	r3, r3, #1
   c8:	e50b3018 	str	r3, [fp, #-24]	; 0xffffffe8
   cc:	e15b30f6 	ldrsh	r3, [fp, #-6]
   d0:	e3530001 	cmp	r3, #1
   d4:	daffffd6 	ble	34 <rle_unpack+0x34>
-        }
-    }
-    first = str[comp_size];
   d8:	e51b3010 	ldr	r3, [fp, #-16]
   dc:	e51b2020 	ldr	r2, [fp, #-32]	; 0xffffffe0
   e0:	e0823003 	add	r3, r2, r3
   e4:	e5d33000 	ldrb	r3, [r3]
   e8:	e54b3011 	strb	r3, [fp, #-17]	; 0xffffffef
-    
-     
-    while (size > 0)
   ec:	ea000024 	b	184 <rle_unpack+0x184>
-    {
-        comp_size--;
   f0:	e51b3010 	ldr	r3, [fp, #-16]
   f4:	e2433001 	sub	r3, r3, #1
   f8:	e50b3010 	str	r3, [fp, #-16]
-        count = str[comp_size];
   fc:	e51b3010 	ldr	r3, [fp, #-16]
  100:	e51b2020 	ldr	r2, [fp, #-32]	; 0xffffffe0
  104:	e0823003 	add	r3, r2, r3
  108:	e5d33000 	ldrb	r3, [r3]
  10c:	e14b31bc 	strh	r3, [fp, #-28]	; 0xffffffe4
-        for (short i = 0; i < (count - '0'); i++)
  110:	e3a03000 	mov	r3, #0
  114:	e14b31ba 	strh	r3, [fp, #-26]	; 0xffffffe6
  118:	ea00000c 	b	150 <rle_unpack+0x150>
-        {
-            str[size] = first;
  11c:	e51b300c 	ldr	r3, [fp, #-12]
  120:	e51b2020 	ldr	r2, [fp, #-32]	; 0xffffffe0
  124:	e0823003 	add	r3, r2, r3
  128:	e55b2011 	ldrb	r2, [fp, #-17]	; 0xffffffef
  12c:	e5c32000 	strb	r2, [r3]
-            size--;
  130:	e51b300c 	ldr	r3, [fp, #-12]
  134:	e2433001 	sub	r3, r3, #1
  138:	e50b300c 	str	r3, [fp, #-12]
-        for (short i = 0; i < (count - '0'); i++)
  13c:	e15b31fa 	ldrsh	r3, [fp, #-26]	; 0xffffffe6
  140:	e6ff3073 	uxth	r3, r3
  144:	e2833001 	add	r3, r3, #1
@@ -130,26 +94,18 @@ char* rle_unpack(char* str)
  158:	e2433030 	sub	r3, r3, #48	; 0x30
  15c:	e1520003 	cmp	r2, r3
  160:	baffffed 	blt	11c <rle_unpack+0x11c>
-        }
-        if (first == '1') first = '0';
  164:	e55b3011 	ldrb	r3, [fp, #-17]	; 0xffffffef
  168:	e3530031 	cmp	r3, #49	; 0x31
  16c:	1a000002 	bne	17c <rle_unpack+0x17c>
  170:	e3a03030 	mov	r3, #48	; 0x30
  174:	e54b3011 	strb	r3, [fp, #-17]	; 0xffffffef
  178:	ea000001 	b	184 <rle_unpack+0x184>
-        else first = '1';
  17c:	e3a03031 	mov	r3, #49	; 0x31
  180:	e54b3011 	strb	r3, [fp, #-17]	; 0xffffffef
-    while (size > 0)
  184:	e51b300c 	ldr	r3, [fp, #-12]
  188:	e3530000 	cmp	r3, #0
  18c:	caffffd7 	bgt	f0 <rle_unpack+0xf0>
-    }
-
-    return str;
  190:	e51b3020 	ldr	r3, [fp, #-32]	; 0xffffffe0
-}
  194:	e1a00003 	mov	r0, r3
  198:	e28bd000 	add	sp, fp, #0
  19c:	e49db004 	pop	{fp}		; (ldr fp, [sp], #4)

@@ -1,0 +1,83 @@
+
+./stuff/obj/pi/obj/rle_arr.c.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <rle_array>:
+   0:	e52db004 	push	{fp}		; (str fp, [sp, #-4]!)
+   4:	e28db000 	add	fp, sp, #0
+   8:	e24dd024 	sub	sp, sp, #36	; 0x24
+   c:	e50b0020 	str	r0, [fp, #-32]	; 0xffffffe0
+  10:	e51b3020 	ldr	r3, [fp, #-32]	; 0xffffffe0
+  14:	e50b3014 	str	r3, [fp, #-20]	; 0xffffffec
+  18:	e51b3020 	ldr	r3, [fp, #-32]	; 0xffffffe0
+  1c:	e5d33000 	ldrb	r3, [r3]
+  20:	e54b3015 	strb	r3, [fp, #-21]	; 0xffffffeb
+  24:	e3a03000 	mov	r3, #0
+  28:	e50b3008 	str	r3, [fp, #-8]
+  2c:	e3a03000 	mov	r3, #0
+  30:	e50b300c 	str	r3, [fp, #-12]
+  34:	ea000027 	b	d8 <rle_array+0xd8>
+  38:	e3a03001 	mov	r3, #1
+  3c:	e50b3010 	str	r3, [fp, #-16]
+  40:	ea000005 	b	5c <rle_array+0x5c>
+  44:	e51b3010 	ldr	r3, [fp, #-16]
+  48:	e2833001 	add	r3, r3, #1
+  4c:	e50b3010 	str	r3, [fp, #-16]
+  50:	e51b300c 	ldr	r3, [fp, #-12]
+  54:	e2833001 	add	r3, r3, #1
+  58:	e50b300c 	str	r3, [fp, #-12]
+  5c:	e51b300c 	ldr	r3, [fp, #-12]
+  60:	e51b2020 	ldr	r2, [fp, #-32]	; 0xffffffe0
+  64:	e0823003 	add	r3, r2, r3
+  68:	e5d33000 	ldrb	r3, [r3]
+  6c:	e3530000 	cmp	r3, #0
+  70:	0a00000a 	beq	a0 <rle_array+0xa0>
+  74:	e51b300c 	ldr	r3, [fp, #-12]
+  78:	e51b2020 	ldr	r2, [fp, #-32]	; 0xffffffe0
+  7c:	e0823003 	add	r3, r2, r3
+  80:	e5d32000 	ldrb	r2, [r3]
+  84:	e51b300c 	ldr	r3, [fp, #-12]
+  88:	e2833001 	add	r3, r3, #1
+  8c:	e51b1020 	ldr	r1, [fp, #-32]	; 0xffffffe0
+  90:	e0813003 	add	r3, r1, r3
+  94:	e5d33000 	ldrb	r3, [r3]
+  98:	e1520003 	cmp	r2, r3
+  9c:	0affffe8 	beq	44 <rle_array+0x44>
+  a0:	e51b3010 	ldr	r3, [fp, #-16]
+  a4:	e6ef2073 	uxtb	r2, r3
+  a8:	e51b3008 	ldr	r3, [fp, #-8]
+  ac:	e51b1014 	ldr	r1, [fp, #-20]	; 0xffffffec
+  b0:	e0813003 	add	r3, r1, r3
+  b4:	e2822030 	add	r2, r2, #48	; 0x30
+  b8:	e6ef2072 	uxtb	r2, r2
+  bc:	e5c32000 	strb	r2, [r3]
+  c0:	e51b3008 	ldr	r3, [fp, #-8]
+  c4:	e2833001 	add	r3, r3, #1
+  c8:	e50b3008 	str	r3, [fp, #-8]
+  cc:	e51b300c 	ldr	r3, [fp, #-12]
+  d0:	e2833001 	add	r3, r3, #1
+  d4:	e50b300c 	str	r3, [fp, #-12]
+  d8:	e51b300c 	ldr	r3, [fp, #-12]
+  dc:	e51b2020 	ldr	r2, [fp, #-32]	; 0xffffffe0
+  e0:	e0823003 	add	r3, r2, r3
+  e4:	e5d33000 	ldrb	r3, [r3]
+  e8:	e3530000 	cmp	r3, #0
+  ec:	1affffd1 	bne	38 <rle_array+0x38>
+  f0:	e51b3008 	ldr	r3, [fp, #-8]
+  f4:	e51b2014 	ldr	r2, [fp, #-20]	; 0xffffffec
+  f8:	e0823003 	add	r3, r2, r3
+  fc:	e55b2015 	ldrb	r2, [fp, #-21]	; 0xffffffeb
+ 100:	e5c32000 	strb	r2, [r3]
+ 104:	e51b3008 	ldr	r3, [fp, #-8]
+ 108:	e2833001 	add	r3, r3, #1
+ 10c:	e51b2014 	ldr	r2, [fp, #-20]	; 0xffffffec
+ 110:	e0823003 	add	r3, r2, r3
+ 114:	e3a02000 	mov	r2, #0
+ 118:	e5c32000 	strb	r2, [r3]
+ 11c:	e51b3014 	ldr	r3, [fp, #-20]	; 0xffffffec
+ 120:	e1a00003 	mov	r0, r3
+ 124:	e28bd000 	add	sp, fp, #0
+ 128:	e49db004 	pop	{fp}		; (ldr fp, [sp], #4)
+ 12c:	e12fff1e 	bx	lr

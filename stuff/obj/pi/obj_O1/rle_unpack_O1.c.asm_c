@@ -1,0 +1,50 @@
+
+./stuff/obj/pi/obj_O1/rle_unpack.c.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <rle_unpack>:
+   0:	e92d4030 	push	{r4, r5, lr}
+   4:	e2402001 	sub	r2, r0, #1
+   8:	e3a0c001 	mov	ip, #1
+   c:	e3a04000 	mov	r4, #0
+  10:	e1a01004 	mov	r1, r4
+  14:	e1a0500c 	mov	r5, ip
+  18:	ea000000 	b	20 <rle_unpack+0x20>
+  1c:	e28cc001 	add	ip, ip, #1
+  20:	e5f23001 	ldrb	r3, [r2, #1]!
+  24:	e16f3f13 	clz	r3, r3
+  28:	e1a032a3 	lsr	r3, r3, #5
+  2c:	e221e001 	eor	lr, r1, #1
+  30:	e113000e 	tst	r3, lr
+  34:	124c4002 	subne	r4, ip, #2
+  38:	11a01005 	movne	r1, r5
+  3c:	1afffff6 	bne	1c <rle_unpack+0x1c>
+  40:	e1130001 	tst	r3, r1
+  44:	0afffff4 	beq	1c <rle_unpack+0x1c>
+  48:	e24cc002 	sub	ip, ip, #2
+  4c:	e0805004 	add	r5, r0, r4
+  50:	e7d04004 	ldrb	r4, [r0, r4]
+  54:	e35c0000 	cmp	ip, #0
+  58:	d8bd8030 	pople	{r4, r5, pc}
+  5c:	e575e001 	ldrb	lr, [r5, #-1]!
+  60:	e24ee030 	sub	lr, lr, #48	; 0x30
+  64:	e35e0000 	cmp	lr, #0
+  68:	da000009 	ble	94 <rle_unpack+0x94>
+  6c:	e28c1001 	add	r1, ip, #1
+  70:	e0801001 	add	r1, r0, r1
+  74:	e1a0200c 	mov	r2, ip
+  78:	e5614001 	strb	r4, [r1, #-1]!
+  7c:	e2422001 	sub	r2, r2, #1
+  80:	e04c3002 	sub	r3, ip, r2
+  84:	e6bf3073 	sxth	r3, r3
+  88:	e153000e 	cmp	r3, lr
+  8c:	bafffff9 	blt	78 <rle_unpack+0x78>
+  90:	e1a0c002 	mov	ip, r2
+  94:	e3540031 	cmp	r4, #49	; 0x31
+  98:	03a04030 	moveq	r4, #48	; 0x30
+  9c:	13a04031 	movne	r4, #49	; 0x31
+  a0:	e35c0000 	cmp	ip, #0
+  a4:	caffffec 	bgt	5c <rle_unpack+0x5c>
+  a8:	e8bd8030 	pop	{r4, r5, pc}

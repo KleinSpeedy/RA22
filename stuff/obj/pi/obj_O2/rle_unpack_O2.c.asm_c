@@ -1,0 +1,70 @@
+
+./stuff/obj/pi/obj_O2/rle_unpack.c.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <rle_unpack>:
+   0:	e3a0c000 	mov	ip, #0
+   4:	e1a0100c 	mov	r1, ip
+   8:	e1a0200c 	mov	r2, ip
+   c:	e92d4030 	push	{r4, r5, lr}
+  10:	e24c5001 	sub	r5, ip, #1
+  14:	e7d0300c 	ldrb	r3, [r0, ip]
+  18:	e3530000 	cmp	r3, #0
+  1c:	1a000026 	bne	bc <rle_unpack+0xbc>
+  20:	e3520000 	cmp	r2, #0
+  24:	e080300c 	add	r3, r0, ip
+  28:	1a00002c 	bne	e0 <rle_unpack+0xe0>
+  2c:	e5d32001 	ldrb	r2, [r3, #1]
+  30:	e3520000 	cmp	r2, #0
+  34:	1a000022 	bne	c4 <rle_unpack+0xc4>
+  38:	e35c0000 	cmp	ip, #0
+  3c:	e7d04005 	ldrb	r4, [r0, r5]
+  40:	e0805005 	add	r5, r0, r5
+  44:	d8bd8030 	pople	{r4, r5, pc}
+  48:	e575e001 	ldrb	lr, [r5, #-1]!
+  4c:	e24ee030 	sub	lr, lr, #48	; 0x30
+  50:	e35e0000 	cmp	lr, #0
+  54:	da000012 	ble	a4 <rle_unpack+0xa4>
+  58:	e28c1001 	add	r1, ip, #1
+  5c:	e0801001 	add	r1, r0, r1
+  60:	e1a0200c 	mov	r2, ip
+  64:	e2422001 	sub	r2, r2, #1
+  68:	e04c3002 	sub	r3, ip, r2
+  6c:	e5614001 	strb	r4, [r1, #-1]!
+  70:	e6bf3073 	sxth	r3, r3
+  74:	e153000e 	cmp	r3, lr
+  78:	bafffff9 	blt	64 <rle_unpack+0x64>
+  7c:	e3540031 	cmp	r4, #49	; 0x31
+  80:	03a04030 	moveq	r4, #48	; 0x30
+  84:	13a04031 	movne	r4, #49	; 0x31
+  88:	e3520000 	cmp	r2, #0
+  8c:	d8bd8030 	pople	{r4, r5, pc}
+  90:	e575e001 	ldrb	lr, [r5, #-1]!
+  94:	e1a0c002 	mov	ip, r2
+  98:	e24ee030 	sub	lr, lr, #48	; 0x30
+  9c:	e35e0000 	cmp	lr, #0
+  a0:	caffffec 	bgt	58 <rle_unpack+0x58>
+  a4:	e3540031 	cmp	r4, #49	; 0x31
+  a8:	e1a0200c 	mov	r2, ip
+  ac:	13a04031 	movne	r4, #49	; 0x31
+  b0:	1afffff4 	bne	88 <rle_unpack+0x88>
+  b4:	e3a04030 	mov	r4, #48	; 0x30
+  b8:	eafffff4 	b	90 <rle_unpack+0x90>
+  bc:	e28cc001 	add	ip, ip, #1
+  c0:	eaffffd2 	b	10 <rle_unpack+0x10>
+  c4:	e5d33002 	ldrb	r3, [r3, #2]
+  c8:	e3530000 	cmp	r3, #0
+  cc:	1a000006 	bne	ec <rle_unpack+0xec>
+  d0:	e7d04005 	ldrb	r4, [r0, r5]
+  d4:	e28cc001 	add	ip, ip, #1
+  d8:	e0805005 	add	r5, r0, r5
+  dc:	eaffffd9 	b	48 <rle_unpack+0x48>
+  e0:	e1a0c005 	mov	ip, r5
+  e4:	e1a05001 	mov	r5, r1
+  e8:	eaffffd2 	b	38 <rle_unpack+0x38>
+  ec:	e28cc003 	add	ip, ip, #3
+  f0:	e1a01005 	mov	r1, r5
+  f4:	e3a02001 	mov	r2, #1
+  f8:	eaffffc4 	b	10 <rle_unpack+0x10>

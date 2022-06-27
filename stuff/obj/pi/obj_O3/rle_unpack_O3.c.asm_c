@@ -1,0 +1,205 @@
+
+./stuff/obj/pi/obj_O3/rle_unpack.c.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <rle_unpack>:
+   0:	e3a03000 	mov	r3, #0
+   4:	e1a0c003 	mov	ip, r3
+   8:	e1a01003 	mov	r1, r3
+   c:	e92d43f0 	push	{r4, r5, r6, r7, r8, r9, lr}
+  10:	e2437001 	sub	r7, r3, #1
+  14:	e7d02003 	ldrb	r2, [r0, r3]
+  18:	e3520000 	cmp	r2, #0
+  1c:	1a0000aa 	bne	2cc <rle_unpack+0x2cc>
+  20:	e3510000 	cmp	r1, #0
+  24:	e0802003 	add	r2, r0, r3
+  28:	1a0000b0 	bne	2f0 <rle_unpack+0x2f0>
+  2c:	e5d21001 	ldrb	r1, [r2, #1]
+  30:	e3510000 	cmp	r1, #0
+  34:	1a0000a6 	bne	2d4 <rle_unpack+0x2d4>
+  38:	e3530000 	cmp	r3, #0
+  3c:	e7d04007 	ldrb	r4, [r0, r7]
+  40:	e0807007 	add	r7, r0, r7
+  44:	d8bd83f0 	pople	{r4, r5, r6, r7, r8, r9, pc}
+  48:	e5771001 	ldrb	r1, [r7, #-1]!
+  4c:	e2416030 	sub	r6, r1, #48	; 0x30
+  50:	e3560000 	cmp	r6, #0
+  54:	da000094 	ble	2ac <rle_unpack+0x2ac>
+  58:	e243c007 	sub	ip, r3, #7
+  5c:	e080200c 	add	r2, r0, ip
+  60:	e2022007 	and	r2, r2, #7
+  64:	e282e007 	add	lr, r2, #7
+  68:	e35e000d 	cmp	lr, #13
+  6c:	e2411031 	sub	r1, r1, #49	; 0x31
+  70:	33a0e00d 	movcc	lr, #13
+  74:	e151000e 	cmp	r1, lr
+  78:	3a00009f 	bcc	2fc <rle_unpack+0x2fc>
+  7c:	e3520000 	cmp	r2, #0
+  80:	0a00008e 	beq	2c0 <rle_unpack+0x2c0>
+  84:	e3520001 	cmp	r2, #1
+  88:	e243e001 	sub	lr, r3, #1
+  8c:	e7c04003 	strb	r4, [r0, r3]
+  90:	0a00008b 	beq	2c4 <rle_unpack+0x2c4>
+  94:	e3520002 	cmp	r2, #2
+  98:	e7c0400e 	strb	r4, [r0, lr]
+  9c:	e243e002 	sub	lr, r3, #2
+  a0:	0a000087 	beq	2c4 <rle_unpack+0x2c4>
+  a4:	e3520003 	cmp	r2, #3
+  a8:	e7c0400e 	strb	r4, [r0, lr]
+  ac:	e243e003 	sub	lr, r3, #3
+  b0:	0a000083 	beq	2c4 <rle_unpack+0x2c4>
+  b4:	e3520004 	cmp	r2, #4
+  b8:	e7c0400e 	strb	r4, [r0, lr]
+  bc:	e243e004 	sub	lr, r3, #4
+  c0:	0a00007f 	beq	2c4 <rle_unpack+0x2c4>
+  c4:	e3520005 	cmp	r2, #5
+  c8:	e7c0400e 	strb	r4, [r0, lr]
+  cc:	e243e005 	sub	lr, r3, #5
+  d0:	0a00007b 	beq	2c4 <rle_unpack+0x2c4>
+  d4:	e7c0400e 	strb	r4, [r0, lr]
+  d8:	e243e006 	sub	lr, r3, #6
+  dc:	e3520007 	cmp	r2, #7
+  e0:	07c0400e 	strbeq	r4, [r0, lr]
+  e4:	01a05002 	moveq	r5, r2
+  e8:	01a0e00c 	moveq	lr, ip
+  ec:	13a05006 	movne	r5, #6
+  f0:	e0468002 	sub	r8, r6, r2
+  f4:	e04c2002 	sub	r2, ip, r2
+  f8:	e0802002 	add	r2, r0, r2
+  fc:	e1841404 	orr	r1, r4, r4, lsl #8
+ 100:	e3c89007 	bic	r9, r8, #7
+ 104:	e0429009 	sub	r9, r2, r9
+ 108:	e1811804 	orr	r1, r1, r4, lsl #16
+ 10c:	e24ec001 	sub	ip, lr, #1
+ 110:	e1811c04 	orr	r1, r1, r4, lsl #24
+ 114:	e2822008 	add	r2, r2, #8
+ 118:	e2899008 	add	r9, r9, #8
+ 11c:	e5221008 	str	r1, [r2, #-8]!
+ 120:	e1520009 	cmp	r2, r9
+ 124:	e24c3007 	sub	r3, ip, #7
+ 128:	e5821004 	str	r1, [r2, #4]
+ 12c:	e24cc008 	sub	ip, ip, #8
+ 130:	1afffff9 	bne	11c <rle_unpack+0x11c>
+ 134:	e3c82007 	bic	r2, r8, #7
+ 138:	e1580002 	cmp	r8, r2
+ 13c:	e04ee002 	sub	lr, lr, r2
+ 140:	e0852002 	add	r2, r5, r2
+ 144:	0a00004f 	beq	288 <rle_unpack+0x288>
+ 148:	e6ff2072 	uxth	r2, r2
+ 14c:	e2821001 	add	r1, r2, #1
+ 150:	e24e3001 	sub	r3, lr, #1
+ 154:	e6bf1071 	sxth	r1, r1
+ 158:	e1510006 	cmp	r1, r6
+ 15c:	e7c0400e 	strb	r4, [r0, lr]
+ 160:	aa000048 	bge	288 <rle_unpack+0x288>
+ 164:	e2821002 	add	r1, r2, #2
+ 168:	e7c04003 	strb	r4, [r0, r3]
+ 16c:	e6bf3071 	sxth	r3, r1
+ 170:	e1560003 	cmp	r6, r3
+ 174:	e24e3002 	sub	r3, lr, #2
+ 178:	da000042 	ble	288 <rle_unpack+0x288>
+ 17c:	e2821003 	add	r1, r2, #3
+ 180:	e7c04003 	strb	r4, [r0, r3]
+ 184:	e6bf3071 	sxth	r3, r1
+ 188:	e1560003 	cmp	r6, r3
+ 18c:	e24e3003 	sub	r3, lr, #3
+ 190:	da00003c 	ble	288 <rle_unpack+0x288>
+ 194:	e2821004 	add	r1, r2, #4
+ 198:	e7c04003 	strb	r4, [r0, r3]
+ 19c:	e6bf3071 	sxth	r3, r1
+ 1a0:	e1560003 	cmp	r6, r3
+ 1a4:	e24e3004 	sub	r3, lr, #4
+ 1a8:	da000036 	ble	288 <rle_unpack+0x288>
+ 1ac:	e2821005 	add	r1, r2, #5
+ 1b0:	e7c04003 	strb	r4, [r0, r3]
+ 1b4:	e6bf3071 	sxth	r3, r1
+ 1b8:	e1560003 	cmp	r6, r3
+ 1bc:	e24e3005 	sub	r3, lr, #5
+ 1c0:	da000030 	ble	288 <rle_unpack+0x288>
+ 1c4:	e2821006 	add	r1, r2, #6
+ 1c8:	e7c04003 	strb	r4, [r0, r3]
+ 1cc:	e6bf3071 	sxth	r3, r1
+ 1d0:	e1560003 	cmp	r6, r3
+ 1d4:	e24e3006 	sub	r3, lr, #6
+ 1d8:	da00002a 	ble	288 <rle_unpack+0x288>
+ 1dc:	e2821007 	add	r1, r2, #7
+ 1e0:	e7c04003 	strb	r4, [r0, r3]
+ 1e4:	e6bf3071 	sxth	r3, r1
+ 1e8:	e1560003 	cmp	r6, r3
+ 1ec:	e24e3007 	sub	r3, lr, #7
+ 1f0:	da000024 	ble	288 <rle_unpack+0x288>
+ 1f4:	e2821008 	add	r1, r2, #8
+ 1f8:	e7c04003 	strb	r4, [r0, r3]
+ 1fc:	e6bf3071 	sxth	r3, r1
+ 200:	e1560003 	cmp	r6, r3
+ 204:	e24e3008 	sub	r3, lr, #8
+ 208:	da00001e 	ble	288 <rle_unpack+0x288>
+ 20c:	e2821009 	add	r1, r2, #9
+ 210:	e7c04003 	strb	r4, [r0, r3]
+ 214:	e6bf3071 	sxth	r3, r1
+ 218:	e1560003 	cmp	r6, r3
+ 21c:	e24e3009 	sub	r3, lr, #9
+ 220:	da000018 	ble	288 <rle_unpack+0x288>
+ 224:	e282100a 	add	r1, r2, #10
+ 228:	e7c04003 	strb	r4, [r0, r3]
+ 22c:	e6bf3071 	sxth	r3, r1
+ 230:	e1560003 	cmp	r6, r3
+ 234:	e24e300a 	sub	r3, lr, #10
+ 238:	da000012 	ble	288 <rle_unpack+0x288>
+ 23c:	e282100b 	add	r1, r2, #11
+ 240:	e7c04003 	strb	r4, [r0, r3]
+ 244:	e6bf3071 	sxth	r3, r1
+ 248:	e1560003 	cmp	r6, r3
+ 24c:	e24e300b 	sub	r3, lr, #11
+ 250:	da00000c 	ble	288 <rle_unpack+0x288>
+ 254:	e282100c 	add	r1, r2, #12
+ 258:	e7c04003 	strb	r4, [r0, r3]
+ 25c:	e6bf3071 	sxth	r3, r1
+ 260:	e1560003 	cmp	r6, r3
+ 264:	e24e300c 	sub	r3, lr, #12
+ 268:	da000006 	ble	288 <rle_unpack+0x288>
+ 26c:	e282200d 	add	r2, r2, #13
+ 270:	e7c04003 	strb	r4, [r0, r3]
+ 274:	e6bf2072 	sxth	r2, r2
+ 278:	e24e300d 	sub	r3, lr, #13
+ 27c:	e1560002 	cmp	r6, r2
+ 280:	c7c04003 	strbgt	r4, [r0, r3]
+ 284:	c24e300e 	subgt	r3, lr, #14
+ 288:	e3540031 	cmp	r4, #49	; 0x31
+ 28c:	03a04030 	moveq	r4, #48	; 0x30
+ 290:	13a04031 	movne	r4, #49	; 0x31
+ 294:	e3530000 	cmp	r3, #0
+ 298:	d8bd83f0 	pople	{r4, r5, r6, r7, r8, r9, pc}
+ 29c:	e5771001 	ldrb	r1, [r7, #-1]!
+ 2a0:	e2416030 	sub	r6, r1, #48	; 0x30
+ 2a4:	e3560000 	cmp	r6, #0
+ 2a8:	caffff6a 	bgt	58 <rle_unpack+0x58>
+ 2ac:	e3540031 	cmp	r4, #49	; 0x31
+ 2b0:	13a04031 	movne	r4, #49	; 0x31
+ 2b4:	1afffff6 	bne	294 <rle_unpack+0x294>
+ 2b8:	e3a04030 	mov	r4, #48	; 0x30
+ 2bc:	eaffff61 	b	48 <rle_unpack+0x48>
+ 2c0:	e1a0e003 	mov	lr, r3
+ 2c4:	e1a05002 	mov	r5, r2
+ 2c8:	eaffff88 	b	f0 <rle_unpack+0xf0>
+ 2cc:	e2833001 	add	r3, r3, #1
+ 2d0:	eaffff4e 	b	10 <rle_unpack+0x10>
+ 2d4:	e5d22002 	ldrb	r2, [r2, #2]
+ 2d8:	e3520000 	cmp	r2, #0
+ 2dc:	1a000009 	bne	308 <rle_unpack+0x308>
+ 2e0:	e7d04007 	ldrb	r4, [r0, r7]
+ 2e4:	e2833001 	add	r3, r3, #1
+ 2e8:	e0807007 	add	r7, r0, r7
+ 2ec:	eaffff55 	b	48 <rle_unpack+0x48>
+ 2f0:	e1a03007 	mov	r3, r7
+ 2f4:	e1a0700c 	mov	r7, ip
+ 2f8:	eaffff4e 	b	38 <rle_unpack+0x38>
+ 2fc:	e1a0e003 	mov	lr, r3
+ 300:	e3a02000 	mov	r2, #0
+ 304:	eaffff8f 	b	148 <rle_unpack+0x148>
+ 308:	e2833003 	add	r3, r3, #3
+ 30c:	e1a0c007 	mov	ip, r7
+ 310:	e3a01001 	mov	r1, #1
+ 314:	eaffff3d 	b	10 <rle_unpack+0x10>
