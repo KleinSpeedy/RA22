@@ -1,0 +1,14 @@
+23, ldr
+16, add
+10, str
+6, ldrb
+5, mov
+4, strb
+4, @
+3, cmp
+2, uxtb
+2, beq
+2, b
+1, sub
+1, bx
+1, bne

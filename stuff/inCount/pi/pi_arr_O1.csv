@@ -1,0 +1,13 @@
+7, mov
+6, add
+5, cmp
+4, ldrb
+3, strb
+3, beq
+2, bne
+2, b
+2, @
+1, sub
+1, rsb
+1, push
+1, pop

@@ -1,0 +1,17 @@
+11, mov
+11, cmp
+8, add
+7, ldrb
+5, sub
+5, bne
+5, b
+2, pople
+2, movne
+2, @
+1, sxth
+1, strb
+1, push
+1, moveq
+1, blt
+1, ble
+1, bgt
