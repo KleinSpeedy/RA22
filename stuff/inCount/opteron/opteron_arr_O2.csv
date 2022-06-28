@@ -1,0 +1,16 @@
+5, movl
+4, addq
+3, testb
+3, movzbl
+3, movslq
+3, movq
+3, movb
+3, je
+3, addl
+2, leaq
+2, leal
+2, jmp
+1, xorl
+1, ret
+1, jne
+1, cmpb
