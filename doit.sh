@@ -1,4 +1,6 @@
 #!/bin/bash
+platform=$1
+
 cmake -B build -S .
 cmake --build build
 
@@ -17,7 +19,7 @@ cp ./build/rle_exe_g ./exe
 #cp ./build/CMakeFiles/rle_obj_O3.dir/rle*.c.o ./stuff/obj/obj_O3
 #cp ./build/CMakeFiles/rle_obj_g.dir/rle*.c.o ./stuff/obj/obj_g
 
-if [ $1 = pi ]
+if [ $platform = pi ]
 then
     echo "Raspberry Pi"
     mkdir -p ./stuff/perf/pi
@@ -50,7 +52,7 @@ then
     objdump -d --source ./stuff/obj/pi/obj_O3/rle_unpack.c.o > ./stuff/obj/pi/obj_O3/rle_unpack_O3.c.asm_c
     objdump -d --source ./stuff/obj/pi/obj_g/rle_unpack.c.o > ./stuff/obj/pi/obj_g/rle_unpack_g.c.asm_c
 
-elif [ $1 = ryzen ]
+elif [ $platform = ryzen ]
 then
     echo "Ryzen"
     mkdir -p ./stuff/perf/ryzen
@@ -83,7 +85,7 @@ then
     objdump -d --source ./stuff/obj/ryzen/obj_O3/rle_unpack.c.o > ./stuff/obj/ryzen/obj_O3/rle_unpack_O3.c.asm_c
     objdump -d --source ./stuff/obj/ryzen/obj_g/rle_unpack.c.o > ./stuff/obj/ryzen/obj_g/rle_unpack_g.c.asm_c
 
-elif [ $1 = athlon ]
+elif [ $platform = athlon ]
 then
     echo "Athlon"
     mkdir -p ./stuff/perf/athlon
@@ -116,7 +118,7 @@ then
     objdump -d --source ./stuff/obj/athlon/obj_O3/rle_unpack.c.o > ./stuff/obj/athlon/obj_O3/rle_unpack_O3.c.asm_c
     objdump -d --source ./stuff/obj/athlon/obj_g/rle_unpack.c.o > ./stuff/obj/athlon/obj_g/rle_unpack_g.c.asm_c
 
-elif [ $1 = opteron ]
+elif [ $platform = opteron ]
 then
     echo "Opteron"
     mkdir -p ./stuff/perf/opteron
@@ -150,9 +152,3 @@ then
     objdump -d --source ./stuff/obj/opteron/obj_g/rle_unpack.c.o > ./stuff/obj/opteron/obj_g/rle_unpack_g.c.asm_c
 
 fi
-
-mkdir -p inCount
-./counter.sh ./build/CMakeFiles/rle_exe.dir/rle_arr.c.s ./inCount/rle_default.csv
-./counter.sh ./build/CMakeFiles/rle_exe_O1.dir/rle_arr.c.s ./inCount/rle_O1.csv
-./counter.sh ./build/CMakeFiles/rle_exe_O2.dir/rle_arr.c.s ./inCount/rle_O2.csv
-./counter.sh ./build/CMakeFiles/rle_exe_O3.dir/rle_arr.c.s ./inCount/rle_O3.csv

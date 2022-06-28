@@ -1,0 +1,13 @@
+7, mv
+6, lbu
+5, beq
+4, li
+4, add
+3, sb
+3, j
+3, addiw
+3, addi
+2, addw
+1, subw
+1, ret
+1, bne

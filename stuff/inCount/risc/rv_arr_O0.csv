@@ -1,0 +1,16 @@
+12, lw
+11, ld
+7, sw
+7, add
+6, lbu
+5, addiw
+5, addi
+4, sb
+3, sd
+2, mv
+2, j
+2, beq
+2, andi
+1, li
+1, jr
+1, bne
