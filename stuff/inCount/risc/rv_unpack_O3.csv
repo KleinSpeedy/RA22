@@ -2,8 +2,8 @@
 28, li
 23, add
 20, slli
+17, sb
 17, addi
-15, sb
 14, j
 13, sd
 12, ld

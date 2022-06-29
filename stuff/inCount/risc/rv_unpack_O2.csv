@@ -6,6 +6,7 @@
 7, add
 5, j
 4, bne
+3, sb
 3, ble
 2, ret
 2, bgt
@@ -13,6 +14,5 @@
 1, sraiw
 1, snez
 1, slliw
-1, sb
 1, blt
 1, beq

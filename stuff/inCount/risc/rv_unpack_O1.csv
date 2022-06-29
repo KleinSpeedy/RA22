@@ -1,10 +1,11 @@
 5, li
 5, addi
+5, add
+4, lbu
 4, addiw
-4, add
+3, sb
 3, ret
 3, mv
-3, lbu
 3, j
 2, bne
 2, ble
@@ -14,5 +15,4 @@
 1, sraiw
 1, snez
 1, slliw
-1, sb
 1, blt
