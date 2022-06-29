@@ -5,6 +5,7 @@
 3, cmpb
 2, subq
 2, movslq
+2, movb
 2, leal
 2, jle
 2, cmpl
@@ -15,7 +16,6 @@
 1, movzbl
 1, movswl
 1, movsbl
-1, movb
 1, leaq
 1, jne
 1, jmp

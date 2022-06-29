@@ -9,6 +9,7 @@
 2, subq
 2, movzbl
 2, movslq
+2, movb
 2, jne
 2, jle
 2, je
@@ -17,7 +18,6 @@
 1, ret
 1, movswl
 1, movsbl
-1, movb
 1, leaq
 1, jmp
 1, jl
