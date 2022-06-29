@@ -1,7 +1,7 @@
 18, leal
 11, cmpl
 10, movl
-9, movb
+10, movb
 8, movq
 7, movd
 6, movzwl
