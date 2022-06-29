@@ -4,11 +4,11 @@
 4, add
 3, ldrb
 2, tst
+2, strb
 2, movne
 2, @
 1, sxth
 1, subne
-1, strb
 1, push
 1, pople
 1, pop

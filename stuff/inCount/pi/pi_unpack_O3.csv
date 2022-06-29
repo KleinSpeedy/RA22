@@ -1,7 +1,7 @@
 34, cmp
 31, sub
 25, add
-19, strb
+21, strb
 13, sxth
 12, mov
 12, ble
