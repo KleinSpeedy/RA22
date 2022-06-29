@@ -1,9 +1,9 @@
 20, leal
 16, movl
 14, cmpl
+10, movb
 9, movslq
 9, jmp
-8, movb
 7, movswl
 7, movd
 6, xorl
