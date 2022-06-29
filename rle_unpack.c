@@ -23,7 +23,8 @@ char* rle_unpack(char* str)
     }
     first = str[comp_size];
     
-     
+    str[0] = first;
+    
     while (size > 0)
     {
         comp_size--;

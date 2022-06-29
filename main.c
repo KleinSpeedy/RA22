@@ -8,5 +8,7 @@ int main()
 {
     char* compressed = rle_array(test1);
     char* unpacked = rle_unpack(compressed);
+
+    printf("%s\n",unpacked);
     return 0;
 }
