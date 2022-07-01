@@ -4,10 +4,9 @@ ___
 ### Skripte
 ___
 ```
-./doit.sh
+./doit.sh $1
 ```   
-Erstellt das Projekt.  
-Objektdateien werden in /obj und jeweilige Unterordner verschoben. Executables werden in /exe verschoben.
+Erstellt das Projekt für eine Platform ($1).
 ___ 
 
 ```
@@ -18,7 +17,7 @@ ___
 
 
 ```
-./counter.sh ./build/rle.*
+./instCounter.sh $1
 ```
-Liest alle Assembler Befehle aus einer *.s Datei (Parameter -1-) und speichert sie in instructionsCounter.csv .
+Liest alle Assembler Befehle für eine Platform ($1).
 ___
